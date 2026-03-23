@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>TATIANI MATTOS | Consultoria de Imagem</title>
+  <link rel="icon" type="image/x-icon" href="/ico/favicon.ico"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#685d45"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#d1c2a5",
+            "on-secondary": "#ffffff",
+            "background": "#fbf9f2",
+            "inverse-on-surface": "#f3f1ea",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#c8c6c5",
+            "secondary-fixed": "#e4e2e1",
+            "on-secondary-fixed-variant": "#474746",
+            "primary": "#685d45",
+            "tertiary-fixed": "#e4e2e1",
+            "on-primary": "#ffffff",
+            "surface-variant": "#e4e2dc",
+            "primary-fixed-dim": "#d4c5a8",
+            "surface-bright": "#fbf9f2",
+            "surface-container-low": "#f6f4ed",
+            "primary-fixed": "#f1e1c2",
+            "on-surface": "#1b1c18",
+            "secondary": "#5f5e5e",
+            "surface-dim": "#dcdad3",
+            "on-primary-fixed": "#221b08",
+            "outline": "#7d766c",
+            "on-primary-container": "#5a4f38",
+            "on-background": "#1b1c18",
+            "surface-container-high": "#eae8e1",
+            "surface-container": "#f0eee7",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#c8c6c6",
+            "surface-container-highest": "#e4e2dc",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#50462f",
+            "on-tertiary-fixed-variant": "#474747",
+            "outline-variant": "#cec5b9",
+            "surface-tint": "#685d45",
+            "on-secondary-fixed": "#1b1c1c",
+            "on-tertiary": "#ffffff",
+            "secondary-container": "#e4e2e1",
+            "on-secondary-container": "#656464",
+            "inverse-surface": "#30312c",
+            "on-tertiary-container": "#515050",
+            "tertiary": "#5f5e5e",
+            "inverse-primary": "#d4c5a8",
+            "surface": "#fbf9f2",
+            "on-surface-variant": "#4b463d",
+            "tertiary-container": "#c5c3c3",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#1b1c1c",
+            "on-error": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .text-balance {
+      text-wrap: balance;
+    }
+
+    .bg-glass {
+      backdrop-filter: blur(20px);
+    }
+
+    .menu-mobile {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .menu-mobile.active {
+      transform: translateX(0);
+    }
+
+    .scroll-to-top {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .scroll-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 w-full z-50 bg-[#fbf9f2]/80 dark:bg-[#1b1c18]/80 backdrop-blur-md shadow-[0_8px_32px_rgba(27,28,24,0.04)]">
+    <div class="flex justify-between items-center px-6 md:px-12 py-6 max-w-screen-2xl mx-auto w-full">
+
+      <!-- Logo -->
+      <a class="font-['Manrope'] font-bold tracking-[-0.02em] text-[#1b1c18] dark:text-[#fbf9f2] text-xl" href="#">
+        TATIANI MATTOS
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-12">
+        <div class="flex gap-10">
+          <a class="font-['Manrope'] font-medium tracking-tight text-sm uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#servicos">
+            Serviços
+          </a>
+          <a class="font-['Manrope'] font-medium tracking-tight text-sm uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#metodologia">
+            Metodologia
+          </a>
+          <a class="font-['Manrope'] font-medium tracking-tight text-sm uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#sobre">
+            Sobre
+          </a>
+          <a class="font-['Manrope'] font-medium tracking-tight text-sm uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#contato">
+            Contato
+          </a>
+        </div>
+        <a class="bg-primary text-on-primary px-6 py-3 text-xs font-bold tracking-[0.1em] uppercase hover:opacity-90 transition-opacity" href="#contato">
+          AGENDAR CONSULTORIA
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 text-primary hover:opacity-70 transition-opacity duration-300">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="menu-mobile fixed left-0 top-20 w-64 h-screen bg-[#fbf9f2]/95 dark:bg-[#1b1c18]/95 backdrop-blur-md md:hidden shadow-lg">
+      <div class="flex flex-col gap-6 p-8 pt-6">
+        <a class="font-['Manrope'] font-medium tracking-tight text-base uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#servicos" onclick="document.getElementById('mobile-menu').classList.remove('active')">
+          Serviços
+        </a>
+        <a class="font-['Manrope'] font-medium tracking-tight text-base uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#metodologia" onclick="document.getElementById('mobile-menu').classList.remove('active')">
+          Metodologia
+        </a>
+        <a class="font-['Manrope'] font-medium tracking-tight text-base uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#sobre" onclick="document.getElementById('mobile-menu').classList.remove('active')">
+          Sobre
+        </a>
+        <a class="font-['Manrope'] font-medium tracking-tight text-base uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#contato" onclick="document.getElementById('mobile-menu').classList.remove('active')">
+          Contato
+        </a>
+        <hr class="border-outline-variant/30 my-4">
+        <a class="bg-primary text-on-primary px-6 py-3 text-xs font-bold tracking-[0.1em] uppercase hover:opacity-90 transition-opacity text-center" href="#contato" onclick="document.getElementById('mobile-menu').classList.remove('active')">
+          AGENDAR CONSULTORIA
+        </a>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-24">
+    <!-- Hero Section -->
+    <section class="relative min-h-[921px] flex items-center overflow-hidden px-6 md:px-12 lg:px-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center w-full max-w-screen-2xl mx-auto">
+
+        <div class="z-10 py-20">
+          <span class="block text-outline font-label tracking-[0.2em] text-xs uppercase mb-6">
+            CONSULTORIA DE IMAGEM ESTRATÉGICA
+          </span>
+          <h1 class="font-headline font-bold text-5xl sm:text-6xl lg:text-8xl leading-[1.1] text-on-surface mb-8 tracking-tighter">
+            Sua imagem é sua primeira voz.
+          </h1>
+          <p class="text-on-surface-variant text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl mb-12 font-light">
+            Transforme sua presença através de um método autoral que une técnica acadêmica, sensibilidade estética e 10 anos de experiência no mercado de alto luxo.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a class="bg-primary text-on-primary px-8 py-5 font-bold tracking-widest text-xs uppercase text-center hover:opacity-95 transition-all" href="#servicos">
+              CONHEÇA OS SERVIÇOS
+            </a>
+            <a class="border border-outline-variant text-primary px-8 py-5 font-bold tracking-widest text-xs uppercase text-center hover:bg-surface-container-low transition-all" href="#contato">
+              AGENDAR DIAGNÓSTICO
+            </a>
+          </div>
+        </div>
+
+        <div class="relative h-[500px] sm:h-[716px] lg:h-[870px] w-full bg-surface-container-low overflow-hidden rounded-sm group">
+          <img alt="Tatiani Mattos portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" data-alt="Elegant professional woman in minimalist studio setting" src="/img/foto-1.webp"/>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Method Section -->
+    <section class="py-24 md:py-32 bg-surface-container-low px-6 md:px-12 lg:px-24" id="metodologia">
+      <div class="max-w-screen-2xl mx-auto">
+
+        <div class="mb-20 md:mb-24 text-center lg:text-left">
+          <span class="text-outline font-label tracking-[0.2em] text-xs uppercase mb-4 block">
+            A ESTRUTURA
+          </span>
+          <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-6xl text-on-surface tracking-tight">
+            Onde a técnica encontra a sensibilidade.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12 md:gap-16">
+
+          <!-- Card 1 -->
+          <div class="space-y-6 group">
+            <span class="text-primary-container font-headline font-extrabold text-6xl sm:text-7xl lg:text-8xl opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+              01.
+            </span>
+            <h3 class="text-xl sm:text-2xl font-bold tracking-tight uppercase">
+              Diagnóstico
+            </h3>
+            <p class="text-on-surface-variant font-light leading-relaxed text-sm sm:text-base">
+              Uma imersão profunda na sua rotina, objetivos e essência para identificar o gap entre quem você é e a imagem que projeta.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="space-y-6 group">
+            <span class="text-primary-container font-headline font-extrabold text-6xl sm:text-7xl lg:text-8xl opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+              02.
+            </span>
+            <h3 class="text-xl sm:text-2xl font-bold tracking-tight uppercase">
+              Estratégia
+            </h3>
+            <p class="text-on-surface-variant font-light leading-relaxed text-sm sm:text-base">
+              Criação de um dossiê visual personalizado. Definimos cores, cortes, tecidos e elementos que comunicam autoridade e sofisticação.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="space-y-6 group">
+            <span class="text-primary-container font-headline font-extrabold text-6xl sm:text-7xl lg:text-8xl opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+              03.
+            </span>
+            <h3 class="text-xl sm:text-2xl font-bold tracking-tight uppercase">
+              Transformação
+            </h3>
+            <p class="text-on-surface-variant font-light leading-relaxed text-sm sm:text-base">
+              A aplicação prática: do closet clearing ao personal shopping, garantindo que cada peça no seu guarda-roupa tenha um propósito.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- Services Ecosystem Section -->
+    <section class="py-24 md:py-32 bg-background px-6 md:px-12 lg:px-24 overflow-hidden" id="servicos">
+      <div class="max-w-screen-2xl mx-auto">
+
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 md:mb-24 gap-8">
+          <div class="max-w-2xl">
+            <span class="text-outline font-label tracking-[0.2em] text-xs uppercase mb-4 block">
+              SOLUÇÕES PERSONALIZADAS
+            </span>
+            <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-6xl text-on-surface tracking-tight leading-tight">
+              O Ecossistema de Transformação
+            </h2>
+          </div>
+          <p class="text-on-surface-variant max-w-sm mb-2 font-light text-sm sm:text-base">
+            Consultorias modulares ou completas, desenhadas para a mulher contemporânea que não abre mão da excelência.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+
+          <!-- Card 1 -->
+          <div class="bg-surface-container p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
+            <div class="flex justify-between items-start">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
+                palette
+              </span>
+              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
+                EXPRESS
+              </span>
+            </div>
+            <div>
+              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
+                Coloração Pessoal
+              </h4>
+              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
+                Descubra sua paleta ideal e aprenda a usar as cores a favor da sua fisionomia e comunicação.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-surface-container-high p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
+            <div class="flex justify-between items-start">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
+                travel_explore
+              </span>
+              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
+                ESSENTIAL
+              </span>
+            </div>
+            <div>
+              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
+                Mala Inteligente
+              </h4>
+              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
+                Planejamento estratégico de looks para viagens de lazer ou negócios, otimizando seu tempo e espaço.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-surface-container-highest p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
+            <div class="flex justify-between items-start">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
+                diamond
+              </span>
+              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
+                PREMIUM
+              </span>
+            </div>
+            <div>
+              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
+                Estratégia de Imagem Completa
+              </h4>
+              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
+                A jornada completa de transformação. Rebrand total da sua imagem pessoal e profissional.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-surface-container-highest p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
+            <div class="flex justify-between items-start">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
+                checkroom
+              </span>
+              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
+                RECURRENTE
+              </span>
+            </div>
+            <div>
+              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
+                Montagem de Looks Recorrente
+              </h4>
+              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
+                Curadoria mensal de composições para sua agenda social e profissional, mantendo seu estilo impecável.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-surface-container-high p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
+            <div class="flex justify-between items-start">
+              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
+                record_voice_over
+              </span>
+              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
+                CORPORATE
+              </span>
+            </div>
+            <div>
+              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
+                Palestras &amp; Treinamentos
+              </h4>
+              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
+                Desenvolvimento de imagem para equipes executivas e treinamentos de Dress Code corporativo para empresas de luxo.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="py-24 md:py-32 bg-surface-container-low px-6 md:px-12 lg:px-24">
+      <div class="max-w-screen-2xl mx-auto">
+
+        <div class="text-center mb-20 md:mb-24">
+          <span class="text-outline font-label tracking-[0.2em] text-[10px] uppercase mb-4 block">
+            FEEDBACK
+          </span>
+          <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-5xl text-on-surface tracking-tight">
+            O que elas dizem
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+
+          <!-- Testimonial 1 -->
+          <div class="bg-background p-8 sm:p-12 shadow-[0_8px_32px_rgba(27,28,24,0.02)]">
+            <p class="italic text-on-surface-variant leading-relaxed mb-8 font-light text-sm sm:text-base">
+              "A consultoria com a Tati foi um divisor de águas na minha carreira. Hoje me sinto segura em qualquer ambiente e minha imagem finalmente reflete minha senioridade."
+            </p>
+            <div>
+              <p class="font-bold text-sm tracking-tight">
+                Dra. Carolina M.
+              </p>
+              <p class="text-[10px] text-outline uppercase tracking-widest mt-1">
+                Advogada
+              </p>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-background p-8 sm:p-12 shadow-[0_8px_32px_rgba(27,28,24,0.02)]">
+            <p class="italic text-on-surface-variant leading-relaxed mb-8 font-light text-sm sm:text-base">
+              "O método dela é impecável. Ela entendeu meu estilo de vida corrido e criou uma mala inteligente que salvou minha viagem para Paris. Praticidade com elegância."
+            </p>
+            <div>
+              <p class="font-bold text-sm tracking-tight">
+                Fernanda L.
+              </p>
+              <p class="text-[10px] text-outline uppercase tracking-widest mt-1">
+                Empresária
+              </p>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-background p-8 sm:p-12 shadow-[0_8px_32px_rgba(27,28,24,0.02)]">
+            <p class="italic text-on-surface-variant leading-relaxed mb-8 font-light text-sm sm:text-base">
+              "Trabalhar minha imagem com a Tatiani foi o melhor investimento que fiz em mim mesma. Aprendi que estilo não é sobre tendências, mas sobre autoconhecimento."
+            </p>
+            <div>
+              <p class="font-bold text-sm tracking-tight">
+                Mariana S.
+              </p>
+              <p class="text-[10px] text-outline uppercase tracking-widest mt-1">
+                Executiva de TI
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-24 md:py-32 bg-background px-6 md:px-12 lg:px-24" id="sobre">
+      <div class="max-w-screen-2xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-center">
+
+          <!-- Image -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative z-10 aspect-[3/4] overflow-hidden">
+              <img alt="Tatiani Mattos portrait" class="w-full h-full object-cover" data-alt="Close up portrait of a sophisticated woman with thoughtful expression" src="/img/foto-2.webp"/>
+            </div>
+            <div class="absolute -bottom-10 -right-10 w-2/3 aspect-square bg-surface-container-highest -z-0"></div>
+          </div>
+
+          <!-- Content -->
+          <div class="lg:col-span-7">
+            <span class="text-outline font-label tracking-[0.2em] text-[10px] uppercase mb-4 block">
+              A MENTORA
+            </span>
+            <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-6xl text-on-surface tracking-tight mb-12">
+              10 anos no coração do alto luxo
+            </h2>
+            <div class="space-y-8 text-on-surface-variant leading-relaxed text-base sm:text-lg font-light max-w-2xl">
+              <p>
+                Com uma trajetória consolidada no mercado de luxo internacional, Tatiani Mattos desenvolveu um olhar apurado para o que há de mais refinado no comportamento e na estética humana.
+              </p>
+              <p>
+                Sua consultoria não se limita a roupas; é um trabalho de arquitetura de imagem. Através de uma metodologia proprietária, ela auxilia mulheres de alto impacto a alinharem sua identidade visual aos seus propósitos de vida e carreira.
+              </p>
+              <p>
+                Especialista em coloração pessoal, visagismo e estratégia de estilo, Tati acredita que a elegância é a harmonia entre o conteúdo e a forma.
+              </p>
+            </div>
+            <div class="mt-16 pt-8 border-t border-outline-variant/20 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
+              <div>
+                <p class="text-2xl sm:text-3xl font-bold text-primary mb-1">
+                  500+
+                </p>
+                <p class="text-[10px] text-outline uppercase tracking-widest">
+                  Clientes
+                </p>
+              </div>
+              <div>
+                <p class="text-2xl sm:text-3xl font-bold text-primary mb-1">
+                  10y
+                </p>
+                <p class="text-[10px] text-outline uppercase tracking-widest">
+                  Experiência
+                </p>
+              </div>
+              <div>
+                <p class="text-2xl sm:text-3xl font-bold text-primary mb-1">
+                  15k+
+                </p>
+                <p class="text-[10px] text-outline uppercase tracking-widest">
+                  Looks
+                </p>
+              </div>
+              <div>
+                <p class="text-2xl sm:text-3xl font-bold text-primary mb-1">
+                  100%
+                </p>
+                <p class="text-[10px] text-outline uppercase tracking-widest">
+                  Personalizado
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- CTA / Form Section -->
+    <section class="py-24 md:py-32 bg-surface-container-highest px-6 md:px-12 lg:px-24" id="contato">
+      <div class="max-w-screen-2xl mx-auto bg-surface p-8 sm:p-12 lg:p-24 shadow-[0_32px_64px_rgba(27,28,24,0.06)]">
+
+        <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 md:gap-24">
+
+          <!-- Contact Info -->
+          <div>
+            <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-6xl text-on-surface tracking-tight mb-8">
+              Sua imagem merece estratégia
+            </h2>
+            <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-light mb-12">
+              Preencha o formulário para uma aplicação de diagnóstico inicial. Retornaremos em até 24 horas úteis.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-center gap-6">
+                <span class="material-symbols-outlined text-primary text-2xl">
+                  mail
+                </span>
+                <span class="text-sm font-medium tracking-tight">
+                  tatimattosconsultora@gmail.com
+                </span>
+              </div>
+              <div class="flex items-center gap-6">
+                <span class="material-symbols-outlined text-primary text-2xl">
+                  location_on
+                </span>
+                <span class="text-sm font-medium tracking-tight">
+                  São Paulo | Atendimento Global
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="68d1aee4-097e-4d8a-849f-5775daa1852c">
+            <input type="hidden" name="subject" value="Nova solicitação de diagnóstico - Tatiani Mattos">
+            <input type="hidden" name="from_name" value="Landing Page Tatiani Mattos">
+
+            <div class="group">
+              <label class="block text-[10px] font-bold tracking-widest uppercase text-outline mb-2">
+                Nome Completo
+              </label>
+              <input class="w-full bg-transparent border-0 border-b border-outline-variant/40 py-3 focus:ring-0 focus:border-primary transition-all font-light text-sm" placeholder="Como deseja ser chamada?" type="text" name="name" required/>
+            </div>
+
+            <div class="group">
+              <label class="block text-[10px] font-bold tracking-widest uppercase text-outline mb-2">
+                E-mail Corporativo
+              </label>
+              <input class="w-full bg-transparent border-0 border-b border-outline-variant/40 py-3 focus:ring-0 focus:border-primary transition-all font-light text-sm" placeholder="contato@empresa.com.br" type="email" name="email" required/>
+            </div>
+
+            <div class="group">
+              <label class="block text-[10px] font-bold tracking-widest uppercase text-outline mb-2">
+                WhatsApp
+              </label>
+              <input class="w-full bg-transparent border-0 border-b border-outline-variant/40 py-3 focus:ring-0 focus:border-primary transition-all font-light text-sm" placeholder="(11) 99999-9999" type="tel" name="phone"/>
+            </div>
+
+            <div class="group">
+              <label class="block text-[10px] font-bold tracking-widest uppercase text-outline mb-2">
+                Qual seu principal objetivo?
+              </label>
+              <select class="w-full bg-transparent border-0 border-b border-outline-variant/40 py-3 focus:ring-0 focus:border-primary transition-all font-light appearance-none text-sm" name="message" required>
+                <option value="Transição de Carreira">Transição de Carreira</option>
+                <option value="Posicionamento de Autoridade">Posicionamento de Autoridade</option>
+                <option value="Mala de Viagem Estratégica">Mala de Viagem Estratégica</option>
+                <option value="Rebranding Pessoal">Rebranding Pessoal</option>
+              </select>
+            </div>
+
+            <button class="w-full bg-primary text-on-primary py-6 font-bold tracking-widest text-xs uppercase hover:opacity-95 transition-all mt-8 text-sm" type="submit">
+              ENVIAR APLICAÇÃO
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" class="scroll-to-top fixed bottom-8 left-8 z-40 w-12 h-12 md:w-14 md:h-14 bg-primary text-on-primary rounded-full flex items-center justify-center hover:opacity-90 transition-all shadow-lg">
+    <span class="material-symbols-outlined text-2xl">arrow_upward</span>
+  </button>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/67992013472" target="_blank" class="fixed bottom-8 right-8 z-40 w-12 h-12 md:w-14 md:h-14 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all shadow-lg">
+    <svg class="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-[#f6f4ed] dark:bg-[#121210] w-full py-12 md:py-16 px-20 md:px-24">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-screen-2xl mx-auto">
+
+      <div class="flex flex-col items-center md:items-start gap-4">
+        <span class="font-['Manrope'] font-semibold text-[#1b1c18] dark:text-[#fbf9f2] text-lg">
+          TATIANI MATTOS
+        </span>
+        <p class="font-['Manrope'] font-light tracking-widest text-[10px] uppercase text-[#685d45] text-center md:text-left">
+          © 2024 TATIANI MATTOS. TODOS OS DIREITOS RESERVADOS.
+        </p>
+      </div>
+
+      <div class="flex gap-8 md:gap-12">
+        <a class="font-['Manrope'] font-light tracking-widest text-[10px] uppercase text-[#7d766c] hover:underline underline-offset-8 transition-all" href="https://www.instagram.com/tatiani.mattos" target="_blank">
+          Instagram
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    // Scroll to Top Button
+    const scrollToTopButton = document.getElementById('scroll-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopButton.classList.add('show');
+      } else {
+        scrollToTopButton.classList.remove('show');
+      }
+    });
+
+    scrollToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+  </script>
+
+</body>
+
+</html>
