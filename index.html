@@ -27,411 +27,978 @@
   <meta property="twitter:image" content="https://tatianimattos.vercel.app/img/foto-1.webp?v=1"/>
   <meta name="twitter:site" content="@tatiani.mattos"/>
   <meta name="twitter:creator" content="@tatiani.mattos"/>
+
   <link rel="icon" type="image/x-icon" href="/ico/favicon.ico"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png"/>
   <link rel="manifest" href="/manifest.json"/>
   <meta name="theme-color" content="#685d45"/>
+
+  <!-- DNS Prefetch -->
   <meta http-equiv="x-dns-prefetch-control" content="on"/>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+
+  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="script" href="https://cdn.tailwindcss.com?plugins=forms,container-queries"/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"/>
-  <link rel="preload" as="image" href="/img/foto-1.webp"/>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary-container": "#d1c2a5",
-            "on-secondary": "#ffffff",
-            "background": "#fbf9f2",
-            "inverse-on-surface": "#f3f1ea",
-            "surface-container-lowest": "#ffffff",
-            "secondary-fixed-dim": "#c8c6c5",
-            "secondary-fixed": "#e4e2e1",
-            "on-secondary-fixed-variant": "#474746",
-            "primary": "#685d45",
-            "tertiary-fixed": "#e4e2e1",
-            "on-primary": "#ffffff",
-            "surface-variant": "#e4e2dc",
-            "primary-fixed-dim": "#d4c5a8",
-            "surface-bright": "#fbf9f2",
-            "surface-container-low": "#f6f4ed",
-            "primary-fixed": "#f1e1c2",
-            "on-surface": "#1b1c18",
-            "secondary": "#5f5e5e",
-            "surface-dim": "#dcdad3",
-            "on-primary-fixed": "#221b08",
-            "outline": "#7d766c",
-            "on-primary-container": "#5a4f38",
-            "on-background": "#1b1c18",
-            "surface-container-high": "#eae8e1",
-            "surface-container": "#f0eee7",
-            "error": "#ba1a1a",
-            "tertiary-fixed-dim": "#c8c6c6",
-            "surface-container-highest": "#e4e2dc",
-            "error-container": "#ffdad6",
-            "on-primary-fixed-variant": "#50462f",
-            "on-tertiary-fixed-variant": "#474747",
-            "outline-variant": "#cec5b9",
-            "surface-tint": "#685d45",
-            "on-secondary-fixed": "#1b1c1c",
-            "on-tertiary": "#ffffff",
-            "secondary-container": "#e4e2e1",
-            "on-secondary-container": "#656464",
-            "inverse-surface": "#30312c",
-            "on-tertiary-container": "#515050",
-            "tertiary": "#5f5e5e",
-            "inverse-primary": "#d4c5a8",
-            "surface": "#fbf9f2",
-            "on-surface-variant": "#4b463d",
-            "tertiary-container": "#c5c3c3",
-            "on-error-container": "#93000a",
-            "on-tertiary-fixed": "#1b1c1c",
-            "on-error": "#ffffff"
-          },
-          fontFamily: {
-            "headline": ["Playfair Display"],
-            "body": ["Playfair Display"],
-            "label": ["Playfair Display"],
-            "playfair": ["Playfair Display"],
-          },
-          borderRadius: {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-        },
-      },
-    }
-  </script>
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="/img/foto-1.webp"
+        imagesrcset="/img/foto-1-480.webp 480w, /img/foto-1-768.webp 768w, /img/foto-1-1200.webp 1200w"
+        imagesizes="(max-width: 1024px) 100vw, 50vw"/>
+
+  <!-- Google Fonts: only weights actually used -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet"/>
 
   <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    /* ─── CSS Custom Properties (design tokens) ─── */
+    :root {
+      --color-primary:                #685d45;
+      --color-on-primary:             #ffffff;
+      --color-primary-fixed:          #f1e1c2;
+      --color-primary-fixed-dim:      #d4c5a8;
+      --color-primary-container:      #d1c2a5;
+      --color-on-primary-container:   #5a4f38;
+      --color-on-primary-fixed:       #221b08;
+      --color-on-primary-fixed-variant: #50462f;
+
+      --color-secondary:              #5f5e5e;
+      --color-on-secondary:           #ffffff;
+      --color-secondary-container:    #e4e2e1;
+      --color-on-secondary-container: #656464;
+      --color-secondary-fixed:        #e4e2e1;
+      --color-secondary-fixed-dim:    #c8c6c5;
+      --color-on-secondary-fixed:     #1b1c1c;
+      --color-on-secondary-fixed-variant: #474746;
+
+      --color-tertiary:               #5f5e5e;
+      --color-on-tertiary:            #ffffff;
+      --color-tertiary-container:     #c5c3c3;
+      --color-on-tertiary-container:  #515050;
+      --color-tertiary-fixed:         #e4e2e1;
+      --color-tertiary-fixed-dim:     #c8c6c6;
+      --color-on-tertiary-fixed:      #1b1c1c;
+      --color-on-tertiary-fixed-variant: #474747;
+
+      --color-background:             #fbf9f2;
+      --color-on-background:          #1b1c18;
+      --color-surface:                #fbf9f2;
+      --color-on-surface:             #1b1c18;
+      --color-surface-variant:        #e4e2dc;
+      --color-on-surface-variant:     #4b463d;
+      --color-surface-bright:         #fbf9f2;
+      --color-surface-dim:            #dcdad3;
+      --color-surface-tint:           #685d45;
+
+      --color-surface-container-lowest:  #ffffff;
+      --color-surface-container-low:     #f6f4ed;
+      --color-surface-container:         #f0eee7;
+      --color-surface-container-high:    #eae8e1;
+      --color-surface-container-highest: #e4e2dc;
+
+      --color-outline:                #7d766c;
+      --color-outline-variant:        #cec5b9;
+      --color-inverse-surface:        #30312c;
+      --color-inverse-on-surface:     #f3f1ea;
+      --color-inverse-primary:        #d4c5a8;
+
+      --color-error:                  #ba1a1a;
+      --color-on-error:               #ffffff;
+      --color-error-container:        #ffdad6;
+      --color-on-error-container:     #93000a;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --radius-sm: 0.125rem;
+      --radius-md: 0.25rem;
+      --radius-lg: 0.5rem;
+      --radius-full: 0.75rem;
     }
 
-    .text-balance {
-      text-wrap: balance;
-    }
-
-    .bg-glass {
-      backdrop-filter: blur(20px);
-    }
-
-    /* Prevent horizontal scroll on mobile */
-    html, body {
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; max-width: 100vw; }
+    body {
+      background-color: var(--color-background);
+      color: var(--color-on-surface);
+      font-family: var(--font-display);
       overflow-x: hidden;
       width: 100%;
       max-width: 100vw;
     }
+    ::selection { background-color: var(--color-primary-container); color: var(--color-on-primary-container); }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
-    * {
-      box-sizing: border-box;
+    /* ─── Material Symbols ─── */
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
     }
 
-    .menu-mobile {
+    /* ─── Layout Utilities ─── */
+    .container { width: 100%; max-width: 1536px; margin-inline: auto; }
+    .px-page { padding-inline: 1rem; }
+    @media (min-width: 768px) { .px-page { padding-inline: 3rem; } }
+    @media (min-width: 1024px) { .px-page { padding-inline: 6rem; } }
+
+    /* ─── Typography Scale ─── */
+    .label-overline {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.625rem; /* 10px */
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-outline);
+      margin-bottom: 1rem;
+    }
+    .text-balance { text-wrap: balance; }
+
+    /* ─── Navigation ─── */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 50;
+      background-color: rgba(251, 249, 242, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(27, 28, 24, 0.04);
+    }
+    .nav__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 1rem;
+      max-width: 1536px;
+      margin-inline: auto;
+    }
+    @media (min-width: 768px) { .nav__inner { padding-inline: 3rem; } }
+
+    .nav__logo {
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      color: var(--color-on-background);
+      font-size: 1.25rem;
+    }
+    @media (min-width: 768px) { .nav__logo { font-size: 1.5rem; } }
+
+    .nav__links {
+      display: none;
+      align-items: center;
+      gap: 3rem;
+    }
+    @media (min-width: 768px) { .nav__links { display: flex; } }
+
+    .nav__link {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-outline);
+      transition: color 0.3s;
+    }
+    .nav__link:hover { color: var(--color-primary); }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+      padding: 0.75rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      transition: opacity 0.2s;
+      border-radius: var(--radius-sm);
+    }
+    .btn-primary:hover { opacity: 0.9; }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--color-outline-variant);
+      color: var(--color-primary);
+      padding: 1.25rem 2rem;
+      font-family: var(--font-display);
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      transition: background-color 0.2s;
+      border-radius: var(--radius-sm);
+    }
+    .btn-outline:hover { background-color: var(--color-surface-container-low); }
+
+    /* Mobile Menu */
+    .nav__mobile-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      color: var(--color-primary);
+      transition: opacity 0.3s;
+    }
+    .nav__mobile-btn:hover { opacity: 0.7; }
+    @media (min-width: 768px) { .nav__mobile-btn { display: none; } }
+
+    .mobile-menu {
+      position: fixed;
+      left: 0;
+      top: 5rem;
+      width: 16rem;
+      height: 100vh;
+      background-color: rgba(251, 249, 242, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 4px 0 16px rgba(0,0,0,0.08);
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
+      z-index: 49;
+    }
+    .mobile-menu.active { transform: translateX(0); }
+    @media (min-width: 768px) { .mobile-menu { display: none; } }
+
+    .mobile-menu__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem 2rem;
+    }
+    .mobile-menu__link {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-outline);
+      transition: color 0.3s;
+    }
+    .mobile-menu__link:hover { color: var(--color-primary); }
+    .mobile-menu__divider {
+      border: none;
+      border-top: 1px solid rgba(206, 197, 185, 0.3);
+      margin: 1rem 0;
     }
 
-    .menu-mobile.active {
-      transform: translateX(0);
+    /* ─── Hero Section ─── */
+    main { padding-top: 6rem; }
+    .hero {
+      position: relative;
+      min-height: 921px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-inline: 1rem;
+    }
+    @media (min-width: 768px) { .hero { padding-inline: 3rem; } }
+    @media (min-width: 1024px) { .hero { padding-inline: 6rem; } }
+
+    .hero__grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+      width: 100%;
+      max-width: 1536px;
+      margin-inline: auto;
+    }
+    @media (min-width: 1024px) {
+      .hero__grid { grid-template-columns: 1fr 1fr; }
     }
 
+    .hero__content { position: relative; z-index: 10; padding-block: 5rem; }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1.1;
+      color: var(--color-on-surface);
+      margin-bottom: 2rem;
+      letter-spacing: -0.04em;
+    }
+    .hero__title em {
+      font-style: italic;
+      color: var(--color-primary);
+    }
+
+    .hero__text {
+      color: var(--color-on-surface-variant);
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      line-height: 1.7;
+      max-width: 36rem;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .hero__cta {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) { .hero__cta { flex-direction: row; } }
+
+    .btn-hero-primary {
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+      padding: 1.25rem 2rem;
+      font-family: var(--font-display);
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      transition: opacity 0.2s;
+    }
+    .btn-hero-primary:hover { opacity: 0.95; }
+
+    .hero__image-wrap {
+      position: relative;
+      height: 500px;
+      width: 100%;
+      background-color: var(--color-surface-container-low);
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+    }
+    @media (min-width: 640px) { .hero__image-wrap { height: 716px; } }
+    @media (min-width: 1024px) { .hero__image-wrap { height: 870px; } }
+
+    .hero__image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s ease-out;
+    }
+    .hero__image-wrap:hover img { transform: scale(1.05); }
+
+    /* ─── Section Base ─── */
+    .section { padding-block: 6rem; }
+    @media (min-width: 768px) { .section { padding-block: 8rem; } }
+
+    .section--low { background-color: var(--color-surface-container-low); }
+    .section--bg   { background-color: var(--color-background); }
+    .section--highest { background-color: var(--color-surface-container-highest); }
+
+    /* ─── Method Section ─── */
+    .method__header { margin-bottom: 5rem; text-align: center; }
+    @media (min-width: 1024px) { .method__header { text-align: left; } }
+
+    .method__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.875rem, 5vw, 3.75rem);
+      color: var(--color-on-surface);
+      letter-spacing: -0.04em;
+    }
+    .method__title em { font-style: italic; }
+
+    .method__grid {
+      display: grid;
+      gap: 3rem 4rem;
+    }
+    @media (min-width: 768px) { .method__grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .method__card { display: flex; flex-direction: column; gap: 1.5rem; }
+    .method__number {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(4rem, 8vw, 6rem);
+      color: var(--color-primary-container);
+      opacity: 0.4;
+      line-height: 1;
+      transition: opacity 0.5s;
+    }
+    .method__card:hover .method__number { opacity: 1; }
+
+    .method__card-title {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    .method__card-text {
+      color: var(--color-on-surface-variant);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+    }
+
+    /* ─── Services Section ─── */
+    .services__header {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 5rem;
+    }
+    @media (min-width: 1024px) {
+      .services__header {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+
+    .services__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.875rem, 5vw, 3.75rem);
+      color: var(--color-on-surface);
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      max-width: 40rem;
+    }
+    .services__title em { font-style: italic; }
+    .services__subtitle {
+      color: var(--color-on-surface-variant);
+      max-width: 24rem;
+      font-weight: 300;
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .services__grid {
+      display: grid;
+      gap: 0.25rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px)  { .services__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .services__grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .service-card {
+      padding: 2rem;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: background-color 0.5s;
+    }
+    @media (min-width: 640px) { .service-card { padding: 3rem; } }
+
+    .service-card--a { background-color: var(--color-surface-container); }
+    .service-card--b { background-color: var(--color-surface-container-high); }
+    .service-card--c { background-color: var(--color-surface-container-highest); }
+    .service-card:hover { background-color: var(--color-primary); }
+
+    .service-card__top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .service-card__icon {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      color: var(--color-primary);
+      transition: color 0.5s;
+    }
+    .service-card:hover .service-card__icon { color: var(--color-on-primary); }
+
+    .service-card__badge {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-outline);
+      transition: color 0.5s;
+    }
+    .service-card:hover .service-card__badge { color: rgba(255,255,255,0.6); }
+
+    .service-card__title {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      transition: color 0.5s;
+    }
+    .service-card:hover .service-card__title { color: var(--color-on-primary); }
+
+    .service-card__desc {
+      font-size: clamp(0.6875rem, 1.2vw, 0.875rem);
+      color: var(--color-on-surface-variant);
+      line-height: 1.65;
+      transition: color 0.5s;
+    }
+    .service-card:hover .service-card__desc { color: rgba(255,255,255,0.8); }
+
+    /* ─── Testimonials ─── */
+    .testimonials__header { text-align: center; margin-bottom: 5rem; }
+    .testimonials__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.875rem, 4vw, 3rem);
+      color: var(--color-on-surface);
+      letter-spacing: -0.04em;
+    }
+
+    .testimonials__grid {
+      display: grid;
+      gap: 2rem 3rem;
+    }
+    @media (min-width: 768px) { .testimonials__grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .testimonial-card {
+      background-color: var(--color-background);
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(27, 28, 24, 0.02);
+    }
+    @media (min-width: 640px) { .testimonial-card { padding: 3rem; } }
+
+    .testimonial-card__quote {
+      font-style: italic;
+      color: var(--color-on-surface-variant);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+    }
+    .testimonial-card__name {
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: -0.02em;
+    }
+    .testimonial-card__role {
+      font-size: 0.5625rem;
+      color: var(--color-outline);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: 0.25rem;
+    }
+
+    /* ─── About Section ─── */
+    .about__grid {
+      display: grid;
+      gap: 3rem 4rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .about__grid { grid-template-columns: 5fr 7fr; }
+    }
+
+    .about__image-wrap {
+      position: relative;
+    }
+    .about__image-inner {
+      position: relative;
+      z-index: 10;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    .about__image-inner img { width: 100%; height: 100%; object-fit: cover; }
+    .about__image-deco {
+      position: absolute;
+      bottom: -2.5rem;
+      right: -2.5rem;
+      width: 66%;
+      aspect-ratio: 1;
+      background-color: var(--color-surface-container-highest);
+      z-index: 0;
+    }
+
+    .about__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.875rem, 5vw, 3.75rem);
+      color: var(--color-on-surface);
+      letter-spacing: -0.04em;
+      margin-bottom: 3rem;
+    }
+    .about__title em { font-style: italic; }
+
+    .about__text-group { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 0; }
+    .about__text-group p {
+      color: var(--color-on-surface-variant);
+      line-height: 1.7;
+      font-weight: 300;
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      max-width: 40rem;
+    }
+
+    .about__stats {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(206, 197, 185, 0.2);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem 2rem;
+    }
+    @media (min-width: 640px) { .about__stats { grid-template-columns: repeat(4, 1fr); } }
+
+    .about__stat-value {
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+    }
+    .about__stat-label {
+      font-size: 0.5625rem;
+      color: var(--color-outline);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* ─── Contact Section ─── */
+    .contact__box {
+      background-color: var(--color-surface);
+      padding: 2rem;
+      box-shadow: 0 32px 64px rgba(27, 28, 24, 0.06);
+    }
+    @media (min-width: 640px) { .contact__box { padding: 3rem; } }
+    @media (min-width: 1024px) { .contact__box { padding: 6rem; } }
+
+    .contact__grid {
+      display: grid;
+      gap: 3rem 4rem;
+    }
+    @media (min-width: 1024px) { .contact__grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .contact__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.875rem, 5vw, 3.75rem);
+      color: var(--color-on-surface);
+      letter-spacing: -0.04em;
+      margin-bottom: 2rem;
+    }
+    .contact__text {
+      color: var(--color-on-surface-variant);
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 3rem;
+    }
+    .contact__info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact__info-row { display: flex; align-items: center; gap: 1.5rem; }
+    .contact__info-text { font-size: 0.875rem; font-weight: 500; letter-spacing: -0.02em; }
+
+    /* Form */
+    .form { display: flex; flex-direction: column; gap: 2rem; }
+    .form-group { display: flex; flex-direction: column; }
+    .form-label {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-outline);
+      margin-bottom: 0.5rem;
+    }
+    .form-input, .form-select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(206, 197, 185, 0.4);
+      padding: 0.75rem 0;
+      font-family: var(--font-display);
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--color-on-surface);
+      outline: none;
+      transition: border-color 0.3s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-input:focus, .form-select:focus { border-color: var(--color-primary); }
+    .form-input::placeholder { color: var(--color-on-surface-variant); opacity: 0.6; }
+    .form-submit {
+      width: 100%;
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+      padding: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s;
+      margin-top: 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+    .form-submit:hover { opacity: 0.95; }
+
+    /* ─── Floating Buttons ─── */
     .scroll-to-top {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 40;
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      transition: opacity 0.3s, visibility 0.3s, background-color 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    @media (min-width: 768px) { .scroll-to-top { bottom: 2rem; left: 2rem; width: 3.5rem; height: 3.5rem; } }
+    .scroll-to-top.show { opacity: 1; visibility: visible; }
+    .scroll-to-top:hover { opacity: 0.9; }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 40;
+      width: 3rem;
+      height: 3rem;
+      background-color: #22c55e;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: background-color 0.2s;
+    }
+    @media (min-width: 768px) { .whatsapp-btn { bottom: 2rem; right: 2rem; width: 3.5rem; height: 3.5rem; } }
+    .whatsapp-btn:hover { background-color: #16a34a; }
+    .whatsapp-btn svg { width: 1.5rem; height: 1.5rem; }
+    @media (min-width: 768px) { .whatsapp-btn svg { width: 1.75rem; height: 1.75rem; } }
+
+    /* ─── Footer ─── */
+    .footer {
+      background-color: #f6f4ed;
+      padding: 3rem 2rem 4rem;
+    }
+    @media (min-width: 768px) { .footer { padding: 4rem 5rem 5rem; } }
+    @media (min-width: 1024px) { .footer { padding-inline: 7rem; } }
+
+    .footer__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1536px;
+      margin-inline: auto;
+    }
+    @media (min-width: 768px) {
+      .footer__inner { flex-direction: row; justify-content: space-between; }
     }
 
-    .scroll-to-top.show {
-      opacity: 1;
-      visibility: visible;
+    .footer__brand { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    @media (min-width: 768px) { .footer__brand { align-items: flex-start; } }
+
+    .footer__name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: var(--color-on-background);
     }
+    .footer__copy {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 0.5625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      text-align: center;
+    }
+    @media (min-width: 768px) { .footer__copy { text-align: left; } }
+
+    .footer__links { display: flex; gap: 2rem 3rem; }
+    .footer__link {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 0.5625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #4a453a;
+      transition: text-decoration 0.2s;
+    }
+    .footer__link:hover { text-decoration: underline; text-underline-offset: 0.5rem; }
   </style>
 </head>
 
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<body>
 
-  <!-- TopNavBar -->
-  <nav class="fixed top-0 w-full z-50 bg-[#fbf9f2]/80 dark:bg-[#1b1c18]/80 backdrop-blur-md shadow-[0_8px_32px_rgba(27,28,24,0.04)]">
-    <div class="flex justify-between items-center px-4 md:px-12 py-6 max-w-screen-2xl mx-auto w-full">
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#">Tatiani Mattos</a>
 
-      <!-- Logo -->
-      <a class="font-['Playfair Display'] font-normal tracking-tighter text-[#1b1c18] dark:text-[#fbf9f2] text-xl md:text-2xl" href="#">
-        Tatiani Mattos
-      </a>
-
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center gap-12">
-        <div class="flex gap-10">
-          <a class="font-['Playfair Display'] font-medium tracking-tight text-sm uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#servicos">
-            Serviços
-          </a>
-          <a class="font-['Playfair Display'] font-medium tracking-tight text-sm uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#metodologia">
-            Metodologia
-          </a>
-          <a class="font-['Playfair Display'] font-medium tracking-tight text-sm uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#sobre">
-            Sobre
-          </a>
-          <a class="font-['Playfair Display'] font-medium tracking-tight text-sm uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#contato">
-            Contato
-          </a>
-        </div>
-        <a class="bg-primary text-on-primary px-6 py-3 text-xs font-bold tracking-[0.1em] uppercase hover:opacity-90 transition-opacity" href="#contato">
-          AGENDAR CONSULTORIA
-        </a>
+      <div class="nav__links">
+        <a class="nav__link" href="#servicos">Serviços</a>
+        <a class="nav__link" href="#metodologia">Metodologia</a>
+        <a class="nav__link" href="#sobre">Sobre</a>
+        <a class="nav__link" href="#contato">Contato</a>
+        <a class="btn-primary" href="#contato">AGENDAR CONSULTORIA</a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 text-primary hover:opacity-70 transition-opacity duration-300">
-        <span class="material-symbols-outlined text-2xl">menu</span>
+      <button id="menu-toggle" class="nav__mobile-btn" aria-label="Abrir menu">
+        <span class="material-symbols-outlined">menu</span>
       </button>
-
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="menu-mobile fixed left-0 top-20 w-64 h-screen bg-[#fbf9f2]/95 dark:bg-[#1b1c18]/95 backdrop-blur-md md:hidden shadow-lg">
-      <div class="flex flex-col gap-6 p-8 pt-6">
-        <a class="font-['Playfair Display'] font-medium tracking-tight text-base uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#servicos" onclick="document.getElementById('mobile-menu').classList.remove('active')">
-          Serviços
-        </a>
-        <a class="font-['Playfair Display'] font-medium tracking-tight text-base uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#metodologia" onclick="document.getElementById('mobile-menu').classList.remove('active')">
-          Metodologia
-        </a>
-        <a class="font-['Playfair Display'] font-medium tracking-tight text-base uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#sobre" onclick="document.getElementById('mobile-menu').classList.remove('active')">
-          Sobre
-        </a>
-        <a class="font-['Playfair Display'] font-medium tracking-tight text-base uppercase text-[#7d766c] hover:text-[#685d45] transition-colors duration-300" href="#contato" onclick="document.getElementById('mobile-menu').classList.remove('active')">
-          Contato
-        </a>
-        <hr class="border-outline-variant/30 my-4">
-        <a class="bg-primary text-on-primary px-6 py-3 text-xs font-bold tracking-[0.1em] uppercase hover:opacity-90 transition-opacity text-center" href="#contato" onclick="document.getElementById('mobile-menu').classList.remove('active')">
-          AGENDAR CONSULTORIA
-        </a>
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu__inner">
+        <a class="mobile-menu__link" href="#servicos" onclick="closeMobileMenu()">Serviços</a>
+        <a class="mobile-menu__link" href="#metodologia" onclick="closeMobileMenu()">Metodologia</a>
+        <a class="mobile-menu__link" href="#sobre" onclick="closeMobileMenu()">Sobre</a>
+        <a class="mobile-menu__link" href="#contato" onclick="closeMobileMenu()">Contato</a>
+        <hr class="mobile-menu__divider"/>
+        <a class="btn-primary" href="#contato" onclick="closeMobileMenu()">AGENDAR CONSULTORIA</a>
       </div>
     </div>
-
   </nav>
 
   <!-- Main Content -->
-  <main class="pt-24">
-    <!-- Hero Section -->
-    <section class="relative min-h-[921px] flex items-center overflow-hidden px-4 md:px-12 lg:px-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center w-full max-w-screen-2xl mx-auto">
+  <main>
 
-        <div class="z-10 py-20">
-          <span class="block text-outline font-label tracking-[0.2em] text-xs uppercase mb-6">
-            CONSULTORIA DE IMAGEM ESTRATÉGICA
-          </span>
-          <h1 class="font-headline font-bold text-5xl sm:text-6xl lg:text-8xl leading-[1.1] text-on-surface mb-8 tracking-tighter">
-            Sua imagem é sua <span class="italic text-primary">primeira voz.</span>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__grid">
+
+        <div class="hero__content">
+          <span class="label-overline">CONSULTORIA DE IMAGEM ESTRATÉGICA</span>
+          <h1 class="hero__title">
+            Sua imagem é sua <em>primeira voz.</em>
           </h1>
-          <p class="text-on-surface-variant text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl mb-12 font-light">
+          <p class="hero__text">
             Transforme sua presença através de um método autoral que une técnica acadêmica, sensibilidade estética e 10 anos de experiência no mercado de alto luxo.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a class="bg-primary text-on-primary px-8 py-5 font-bold tracking-widest text-xs uppercase text-center hover:opacity-95 transition-all" href="#servicos">
-              CONHEÇA OS SERVIÇOS
-            </a>
-            <a class="border border-outline-variant text-primary px-8 py-5 font-bold tracking-widest text-xs uppercase text-center hover:bg-surface-container-low transition-all" href="#contato">
-              AGENDAR DIAGNÓSTICO
-            </a>
+          <div class="hero__cta">
+            <a class="btn-hero-primary" href="#servicos">CONHEÇA OS SERVIÇOS</a>
+            <a class="btn-outline" href="#contato">AGENDAR DIAGNÓSTICO</a>
           </div>
         </div>
 
-        <div class="relative h-[500px] sm:h-[716px] lg:h-[870px] w-full bg-surface-container-low overflow-hidden rounded-sm group">
-          <img alt="Tatiani Mattos portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" data-alt="Elegant professional woman in minimalist studio setting" src="/img/foto-1.webp" loading="eager" decoding="async" fetchpriority="high" width="1200" height="800"/>
+        <div class="hero__image-wrap">
+          <img
+            alt="Tatiani Mattos — consultora de imagem"
+            src="/img/foto-1.webp"
+            srcset="/img/foto-1-480.webp 480w,
+                    /img/foto-1-768.webp 768w,
+                    /img/foto-1-1200.webp 1200w"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            width="1200"
+            height="1600"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
         </div>
 
       </div>
     </section>
 
     <!-- Method Section -->
-    <section class="py-24 md:py-32 bg-surface-container-low px-4 md:px-12 lg:px-24" id="metodologia">
-      <div class="max-w-screen-2xl mx-auto">
+    <section class="section section--low px-page" id="metodologia">
+      <div class="container">
 
-        <div class="mb-20 md:mb-24 text-center lg:text-left">
-          <span class="text-outline font-label tracking-[0.2em] text-xs uppercase mb-4 block">
-            A ESTRUTURA
-          </span>
-          <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-6xl text-on-surface tracking-tight">
-            Onde a técnica encontra a <span class="italic">sensibilidade.</span>
-          </h2>
+        <div class="method__header">
+          <span class="label-overline">A ESTRUTURA</span>
+          <h2 class="method__title">Onde a técnica encontra a <em>sensibilidade.</em></h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-12 md:gap-16">
-
-          <!-- Card 1 -->
-          <div class="space-y-6 group">
-            <span class="text-primary-container font-headline font-extrabold text-6xl sm:text-7xl lg:text-8xl opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-              01.
-            </span>
-            <h3 class="text-xl sm:text-2xl font-bold tracking-tight uppercase">
-              Diagnóstico
-            </h3>
-            <p class="text-on-surface-variant font-light leading-relaxed text-sm sm:text-base">
-              Uma imersão profunda na sua rotina, objetivos e essência para identificar o gap entre quem você é e a imagem que projeta.
-            </p>
+        <div class="method__grid">
+          <div class="method__card">
+            <span class="method__number">01.</span>
+            <h3 class="method__card-title">Diagnóstico</h3>
+            <p class="method__card-text">Uma imersão profunda na sua rotina, objetivos e essência para identificar o gap entre quem você é e a imagem que projeta.</p>
           </div>
-
-          <!-- Card 2 -->
-          <div class="space-y-6 group">
-            <span class="text-primary-container font-headline font-extrabold text-6xl sm:text-7xl lg:text-8xl opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-              02.
-            </span>
-            <h3 class="text-xl sm:text-2xl font-bold tracking-tight uppercase">
-              Estratégia
-            </h3>
-            <p class="text-on-surface-variant font-light leading-relaxed text-sm sm:text-base">
-              Criação de um dossiê visual personalizado. Definimos cores, cortes, tecidos e elementos que comunicam autoridade e sofisticação.
-            </p>
+          <div class="method__card">
+            <span class="method__number">02.</span>
+            <h3 class="method__card-title">Estratégia</h3>
+            <p class="method__card-text">Criação de um dossiê visual personalizado. Definimos cores, cortes, tecidos e elementos que comunicam autoridade e sofisticação.</p>
           </div>
-
-          <!-- Card 3 -->
-          <div class="space-y-6 group">
-            <span class="text-primary-container font-headline font-extrabold text-6xl sm:text-7xl lg:text-8xl opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-              03.
-            </span>
-            <h3 class="text-xl sm:text-2xl font-bold tracking-tight uppercase">
-              Transformação
-            </h3>
-            <p class="text-on-surface-variant font-light leading-relaxed text-sm sm:text-base">
-              A aplicação prática: do closet clearing ao personal shopping, garantindo que cada peça no seu guarda-roupa tenha um propósito.
-            </p>
+          <div class="method__card">
+            <span class="method__number">03.</span>
+            <h3 class="method__card-title">Transformação</h3>
+            <p class="method__card-text">A aplicação prática: do closet clearing ao personal shopping, garantindo que cada peça no seu guarda-roupa tenha um propósito.</p>
           </div>
-
         </div>
 
       </div>
     </section>
-    <!-- Services Ecosystem Section -->
-    <section class="py-24 md:py-32 bg-background px-4 md:px-12 lg:px-24 overflow-hidden" id="servicos">
-      <div class="max-w-screen-2xl mx-auto">
 
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 md:mb-24 gap-8">
-          <div class="max-w-2xl">
-            <span class="text-outline font-label tracking-[0.2em] text-xs uppercase mb-4 block">
-              SOLUÇÕES PERSONALIZADAS
-            </span>
-            <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-6xl text-on-surface tracking-tight leading-tight">
-              O Ecossistema de <span class="italic">Transformação</span>
-            </h2>
+    <!-- Services Section -->
+    <section class="section section--bg px-page" id="servicos" style="overflow: hidden;">
+      <div class="container">
+
+        <div class="services__header">
+          <div style="max-width: 40rem;">
+            <span class="label-overline">SOLUÇÕES PERSONALIZADAS</span>
+            <h2 class="services__title">O Ecossistema de <em>Transformação</em></h2>
           </div>
-          <p class="text-on-surface-variant max-w-sm mb-2 font-light text-sm sm:text-base">
-            Consultorias modulares ou completas, desenhadas para a mulher contemporânea que não abre mão da excelência.
-          </p>
+          <p class="services__subtitle">Consultorias modulares ou completas, desenhadas para a mulher contemporânea que não abre mão da excelência.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+        <div class="services__grid">
 
-          <!-- Card 1 -->
-          <div class="bg-surface-container p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
-            <div class="flex justify-between items-start">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
-                palette
-              </span>
-              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
-                EXPRESS
-              </span>
+          <div class="service-card service-card--a">
+            <div class="service-card__top">
+              <span class="material-symbols-outlined service-card__icon">palette</span>
+              <span class="service-card__badge">EXPRESS</span>
             </div>
             <div>
-              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
-                Coloração Pessoal
-              </h4>
-              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
-                Descubra sua paleta ideal e aprenda a usar as cores a favor da sua fisionomia e comunicação.
-              </p>
+              <h4 class="service-card__title">Coloração Pessoal</h4>
+              <p class="service-card__desc">Descubra sua paleta ideal e aprenda a usar as cores a favor da sua fisionomia e comunicação.</p>
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="bg-surface-container-high p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
-            <div class="flex justify-between items-start">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
-                travel_explore
-              </span>
-              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
-                ESSENTIAL
-              </span>
+          <div class="service-card service-card--b">
+            <div class="service-card__top">
+              <span class="material-symbols-outlined service-card__icon">travel_explore</span>
+              <span class="service-card__badge">ESSENTIAL</span>
             </div>
             <div>
-              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
-                Mala Inteligente
-              </h4>
-              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
-                Planejamento estratégico de looks para viagens de lazer ou negócios, otimizando seu tempo e espaço.
-              </p>
+              <h4 class="service-card__title">Mala Inteligente</h4>
+              <p class="service-card__desc">Planejamento estratégico de looks para viagens de lazer ou negócios, otimizando seu tempo e espaço.</p>
             </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="bg-surface-container-highest p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
-            <div class="flex justify-between items-start">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
-                diamond
-              </span>
-              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
-                PREMIUM
-              </span>
+          <div class="service-card service-card--c">
+            <div class="service-card__top">
+              <span class="material-symbols-outlined service-card__icon">diamond</span>
+              <span class="service-card__badge">PREMIUM</span>
             </div>
             <div>
-              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
-                Estratégia de Imagem Completa
-              </h4>
-              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
-                A jornada completa de transformação. Rebrand total da sua imagem pessoal e profissional.
-              </p>
+              <h4 class="service-card__title">Estratégia de Imagem Completa</h4>
+              <p class="service-card__desc">A jornada completa de transformação. Rebrand total da sua imagem pessoal e profissional.</p>
             </div>
           </div>
 
-          <!-- Card 4 -->
-          <div class="bg-surface-container-highest p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
-            <div class="flex justify-between items-start">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
-                checkroom
-              </span>
-              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
-                RECURRENTE
-              </span>
+          <div class="service-card service-card--c">
+            <div class="service-card__top">
+              <span class="material-symbols-outlined service-card__icon">checkroom</span>
+              <span class="service-card__badge">RECURRENTE</span>
             </div>
             <div>
-              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
-                Montagem de Looks Recorrente
-              </h4>
-              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
-                Curadoria mensal de composições para sua agenda social e profissional, mantendo seu estilo impecável.
-              </p>
+              <h4 class="service-card__title">Montagem de Looks Recorrente</h4>
+              <p class="service-card__desc">Curadoria mensal de composições para sua agenda social e profissional, mantendo seu estilo impecável.</p>
             </div>
           </div>
 
-          <!-- Card 5 -->
-          <div class="bg-surface-container-high p-8 sm:p-12 aspect-square flex flex-col justify-between hover:bg-primary group transition-colors duration-500 cursor-pointer">
-            <div class="flex justify-between items-start">
-              <span class="material-symbols-outlined text-3xl sm:text-4xl text-primary group-hover:text-on-primary transition-colors">
-                record_voice_over
-              </span>
-              <span class="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-outline group-hover:text-on-primary/60">
-                CORPORATE
-              </span>
+          <div class="service-card service-card--b">
+            <div class="service-card__top">
+              <span class="material-symbols-outlined service-card__icon">record_voice_over</span>
+              <span class="service-card__badge">CORPORATE</span>
             </div>
             <div>
-              <h4 class="text-lg sm:text-2xl font-bold mb-4 group-hover:text-on-primary transition-colors">
-                Palestras &amp; Treinamentos
-              </h4>
-              <p class="text-xs sm:text-sm text-on-surface-variant group-hover:text-on-primary/80 transition-colors leading-relaxed">
-                Desenvolvimento de imagem para equipes executivas e treinamentos de Dress Code corporativo para empresas de luxo.
-              </p>
+              <h4 class="service-card__title">Palestras &amp; Treinamentos</h4>
+              <p class="service-card__desc">Desenvolvimento de imagem para equipes executivas e treinamentos de Dress Code corporativo para empresas de luxo.</p>
             </div>
           </div>
 
@@ -439,314 +1006,188 @@
 
       </div>
     </section>
+
     <!-- Testimonials -->
-    <section class="py-24 md:py-32 bg-surface-container-low px-4 md:px-12 lg:px-24">
-      <div class="max-w-screen-2xl mx-auto">
+    <section class="section section--low px-page">
+      <div class="container">
 
-        <div class="text-center mb-20 md:mb-24">
-          <span class="text-outline font-label tracking-[0.2em] text-[10px] uppercase mb-4 block">
-            FEEDBACK
-          </span>
-          <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-5xl text-on-surface tracking-tight">
-            O que elas dizem
-          </h2>
+        <div class="testimonials__header">
+          <span class="label-overline">FEEDBACK</span>
+          <h2 class="testimonials__title">O que elas dizem</h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 md:gap-12">
-
-          <!-- Testimonial 1 -->
-          <div class="bg-background p-8 sm:p-12 shadow-[0_8px_32px_rgba(27,28,24,0.02)]">
-            <p class="italic text-on-surface-variant leading-relaxed mb-8 font-light text-sm sm:text-base">
-              "A consultoria com a Tati foi um divisor de águas na minha carreira. Hoje me sinto segura em qualquer ambiente e minha imagem finalmente reflete minha senioridade."
-            </p>
-            <div>
-              <p class="font-bold text-sm tracking-tight">
-                Dra. Carolina M.
-              </p>
-              <p class="text-[10px] text-outline uppercase tracking-widest mt-1">
-                Advogada
-              </p>
-            </div>
+        <div class="testimonials__grid">
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"A consultoria com a Tati foi um divisor de águas na minha carreira. Hoje me sinto segura em qualquer ambiente e minha imagem finalmente reflete minha senioridade."</p>
+            <p class="testimonial-card__name">Dra. Carolina M.</p>
+            <p class="testimonial-card__role">Advogada</p>
           </div>
-
-          <!-- Testimonial 2 -->
-          <div class="bg-background p-8 sm:p-12 shadow-[0_8px_32px_rgba(27,28,24,0.02)]">
-            <p class="italic text-on-surface-variant leading-relaxed mb-8 font-light text-sm sm:text-base">
-              "O método dela é impecável. Ela entendeu meu estilo de vida corrido e criou uma mala inteligente que salvou minha viagem para Paris. Praticidade com elegância."
-            </p>
-            <div>
-              <p class="font-bold text-sm tracking-tight">
-                Fernanda L.
-              </p>
-              <p class="text-[10px] text-outline uppercase tracking-widest mt-1">
-                Empresária
-              </p>
-            </div>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"O método dela é impecável. Ela entendeu meu estilo de vida corrido e criou uma mala inteligente que salvou minha viagem para Paris. Praticidade com elegância."</p>
+            <p class="testimonial-card__name">Fernanda L.</p>
+            <p class="testimonial-card__role">Empresária</p>
           </div>
-
-          <!-- Testimonial 3 -->
-          <div class="bg-background p-8 sm:p-12 shadow-[0_8px_32px_rgba(27,28,24,0.02)]">
-            <p class="italic text-on-surface-variant leading-relaxed mb-8 font-light text-sm sm:text-base">
-              "Trabalhar minha imagem com a Tatiani foi o melhor investimento que fiz em mim mesma. Aprendi que estilo não é sobre tendências, mas sobre autoconhecimento."
-            </p>
-            <div>
-              <p class="font-bold text-sm tracking-tight">
-                Mariana S.
-              </p>
-              <p class="text-[10px] text-outline uppercase tracking-widest mt-1">
-                Executiva de TI
-              </p>
-            </div>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"Trabalhar minha imagem com a Tatiani foi o melhor investimento que fiz em mim mesma. Aprendi que estilo não é sobre tendências, mas sobre autoconhecimento."</p>
+            <p class="testimonial-card__name">Mariana S.</p>
+            <p class="testimonial-card__role">Executiva de TI</p>
           </div>
-
         </div>
 
       </div>
     </section>
 
     <!-- About Section -->
-    <section class="py-24 md:py-32 bg-background px-4 md:px-12 lg:px-24" id="sobre">
-      <div class="max-w-screen-2xl mx-auto">
+    <section class="section section--bg px-page" id="sobre">
+      <div class="container">
 
-        <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-center">
-
-          <!-- Image -->
-          <div class="lg:col-span-5 relative">
-            <div class="relative z-10 aspect-[3/4] overflow-hidden">
-              <img alt="Tatiani Mattos portrait" class="w-full h-full object-cover" data-alt="Close up portrait of a sophisticated woman with thoughtful expression" src="/img/foto-2.webp" loading="lazy" decoding="async" width="1200" height="800"/>
+        <div class="about__grid">
+          <div class="about__image-wrap">
+            <div class="about__image-inner">
+              <img
+                alt="Tatiani Mattos — mentora de imagem"
+                src="/img/foto-2.webp"
+                srcset="/img/foto-2-480.webp 480w,
+                        /img/foto-2-768.webp 768w,
+                        /img/foto-2-1200.webp 1200w"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                width="800"
+                height="1067"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-            <div class="absolute -bottom-10 -right-10 w-2/3 aspect-square bg-surface-container-highest -z-0"></div>
+            <div class="about__image-deco"></div>
           </div>
 
-          <!-- Content -->
-          <div class="lg:col-span-7">
-            <span class="text-outline font-label tracking-[0.2em] text-[10px] uppercase mb-4 block">
-              A MENTORA
-            </span>
-            <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-6xl text-on-surface tracking-tight mb-12">
-              10 anos no coração do <span class="italic">alto luxo</span>
-            </h2>
-            <div class="space-y-8 text-on-surface-variant leading-relaxed text-base sm:text-lg font-light max-w-2xl">
-              <p>
-                Com uma trajetória consolidada no mercado de luxo internacional, Tatiani Mattos desenvolveu um olhar apurado para o que há de mais refinado no comportamento e na estética humana.
-              </p>
-              <p>
-                Sua consultoria não se limita a roupas; é um trabalho de arquitetura de imagem. Através de uma metodologia proprietária, ela auxilia mulheres de alto impacto a alinharem sua identidade visual aos seus propósitos de vida e carreira.
-              </p>
-              <p>
-                Especialista em coloração pessoal, visagismo e estratégia de estilo, Tati acredita que a elegância é a harmonia entre o conteúdo e a forma.
-              </p>
+          <div>
+            <span class="label-overline">A MENTORA</span>
+            <h2 class="about__title">10 anos no coração do <em>alto luxo</em></h2>
+            <div class="about__text-group">
+              <p>Com uma trajetória consolidada no mercado de luxo internacional, Tatiani Mattos desenvolveu um olhar apurado para o que há de mais refinado no comportamento e na estética humana.</p>
+              <p>Sua consultoria não se limita a roupas; é um trabalho de arquitetura de imagem. Através de uma metodologia proprietária, ela auxilia mulheres de alto impacto a alinharem sua identidade visual aos seus propósitos de vida e carreira.</p>
+              <p>Especialista em coloração pessoal, visagismo e estratégia de estilo, Tati acredita que a elegância é a harmonia entre o conteúdo e a forma.</p>
             </div>
-            <div class="mt-16 pt-8 border-t border-outline-variant/20 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
-              <div>
-                <p class="text-2xl sm:text-3xl font-bold text-primary mb-1">
-                  500+
-                </p>
-                <p class="text-[10px] text-outline uppercase tracking-widest">
-                  Clientes
-                </p>
-              </div>
-              <div>
-                <p class="text-2xl sm:text-3xl font-bold text-primary mb-1">
-                  10A
-                </p>
-                <p class="text-[10px] text-outline uppercase tracking-widest">
-                  Experiência
-                </p>
-              </div>
-              <div>
-                <p class="text-2xl sm:text-3xl font-bold text-primary mb-1">
-                  15k+
-                </p>
-                <p class="text-[10px] text-outline uppercase tracking-widest">
-                  Looks
-                </p>
-              </div>
-              <div>
-                <p class="text-2xl sm:text-3xl font-bold text-primary mb-1">
-                  100%
-                </p>
-                <p class="text-[10px] text-outline uppercase tracking-widest">
-                  Personalizado
-                </p>
-              </div>
+            <div class="about__stats">
+              <div><p class="about__stat-value">500+</p><p class="about__stat-label">Clientes</p></div>
+              <div><p class="about__stat-value">10A</p><p class="about__stat-label">Experiência</p></div>
+              <div><p class="about__stat-value">15k+</p><p class="about__stat-label">Looks</p></div>
+              <div><p class="about__stat-value">100%</p><p class="about__stat-label">Personalizado</p></div>
             </div>
           </div>
-
         </div>
 
       </div>
     </section>
-    <!-- CTA / Form Section -->
-    <section class="py-24 md:py-32 bg-surface-container-highest px-4 md:px-12 lg:px-24" id="contato">
-      <div class="max-w-screen-2xl mx-auto bg-surface p-8 sm:p-12 lg:p-24 shadow-[0_32px_64px_rgba(27,28,24,0.06)]">
 
-        <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 md:gap-24">
+    <!-- Contact Section -->
+    <section class="section section--highest px-page" id="contato">
+      <div class="container">
+        <div class="contact__box">
+          <div class="contact__grid">
 
-          <!-- Contact Info -->
-          <div>
-            <h2 class="font-headline font-bold text-3xl sm:text-4xl lg:text-6xl text-on-surface tracking-tight mb-8">
-              Sua imagem merece estratégia
-            </h2>
-            <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed font-light mb-12">
-              Preencha o formulário para uma aplicação de diagnóstico inicial. Retornaremos em até 24 horas úteis.
-            </p>
-            <div class="space-y-6">
-              <div class="flex items-center gap-6">
-                <span class="material-symbols-outlined text-primary text-2xl">
-                  mail
-                </span>
-                <span class="text-sm font-medium tracking-tight">
-                  tatimattosconsultora@gmail.com
-                </span>
-              </div>
-              <div class="flex items-center gap-6">
-                <span class="material-symbols-outlined text-primary text-2xl">
-                  location_on
-                </span>
-                <span class="text-sm font-medium tracking-tight">
-                  São Paulo | Atendimento Global
-                </span>
+            <div>
+              <h2 class="contact__title">Sua imagem merece estratégia</h2>
+              <p class="contact__text">Preencha o formulário para uma aplicação de diagnóstico inicial. Retornaremos em até 24 horas úteis.</p>
+              <div class="contact__info">
+                <div class="contact__info-row">
+                  <span class="material-symbols-outlined" style="color: var(--color-primary);">mail</span>
+                  <span class="contact__info-text">tatimattosconsultora@gmail.com</span>
+                </div>
+                <div class="contact__info-row">
+                  <span class="material-symbols-outlined" style="color: var(--color-primary);">location_on</span>
+                  <span class="contact__info-text">São Paulo | Atendimento Global</span>
+                </div>
               </div>
             </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="form">
+              <input type="hidden" name="access_key" value="68d1aee4-097e-4d8a-849f-5775daa1852c"/>
+              <input type="hidden" name="subject" value="Nova solicitação de diagnóstico - Tatiani Mattos"/>
+              <input type="hidden" name="from_name" value="Landing Page Tatiani Mattos"/>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Nome Completo</label>
+                <input class="form-input" id="contact-name" name="name" placeholder="Como deseja ser chamada?" type="text" required/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email">E-mail Corporativo</label>
+                <input class="form-input" id="contact-email" name="email" placeholder="contato@empresa.com.br" type="email" required/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">WhatsApp</label>
+                <input class="form-input" id="contact-phone" name="phone" placeholder="(11) 99999-9999" type="tel"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-objective">Qual seu principal objetivo?</label>
+                <select class="form-select" id="contact-objective" name="message" required>
+                  <option value="Transição de Carreira">Transição de Carreira</option>
+                  <option value="Posicionamento de Autoridade">Posicionamento de Autoridade</option>
+                  <option value="Mala de Viagem Estratégica">Mala de Viagem Estratégica</option>
+                  <option value="Rebranding Pessoal">Rebranding Pessoal</option>
+                </select>
+              </div>
+              <button class="form-submit" type="submit">ENVIAR APLICAÇÃO</button>
+            </form>
+
           </div>
-
-          <!-- Contact Form -->
-          <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
-            <!-- Web3Forms Access Key -->
-            <input type="hidden" name="access_key" value="68d1aee4-097e-4d8a-849f-5775daa1852c">
-            <input type="hidden" name="subject" value="Nova solicitação de diagnóstico - Tatiani Mattos">
-            <input type="hidden" name="from_name" value="Landing Page Tatiani Mattos">
-
-            <div class="group">
-              <label for="contact-name" class="block text-[10px] font-bold tracking-widest uppercase text-outline mb-2">
-                Nome Completo
-              </label>
-              <input id="contact-name" class="w-full bg-transparent border-0 border-b border-outline-variant/40 py-3 focus:ring-0 focus:border-primary transition-all font-light text-sm" placeholder="Como deseja ser chamada?" type="text" name="name" required/>
-            </div>
-
-            <div class="group">
-              <label for="contact-email" class="block text-[10px] font-bold tracking-widest uppercase text-outline mb-2">
-                E-mail Corporativo
-              </label>
-              <input id="contact-email" class="w-full bg-transparent border-0 border-b border-outline-variant/40 py-3 focus:ring-0 focus:border-primary transition-all font-light text-sm" placeholder="contato@empresa.com.br" type="email" name="email" required/>
-            </div>
-
-            <div class="group">
-              <label for="contact-phone" class="block text-[10px] font-bold tracking-widest uppercase text-outline mb-2">
-                WhatsApp
-              </label>
-              <input id="contact-phone" class="w-full bg-transparent border-0 border-b border-outline-variant/40 py-3 focus:ring-0 focus:border-primary transition-all font-light text-sm" placeholder="(11) 99999-9999" type="tel" name="phone"/>
-            </div>
-
-            <div class="group">
-              <label for="contact-objective" class="block text-[10px] font-bold tracking-widest uppercase text-outline mb-2">
-                Qual seu principal objetivo?
-              </label>
-              <select id="contact-objective" class="w-full bg-transparent border-0 border-b border-outline-variant/40 py-3 focus:ring-0 focus:border-primary transition-all font-light appearance-none text-sm" name="message" required>
-                <option value="Transição de Carreira">Transição de Carreira</option>
-                <option value="Posicionamento de Autoridade">Posicionamento de Autoridade</option>
-                <option value="Mala de Viagem Estratégica">Mala de Viagem Estratégica</option>
-                <option value="Rebranding Pessoal">Rebranding Pessoal</option>
-              </select>
-            </div>
-
-            <button class="w-full bg-primary text-on-primary py-6 font-bold tracking-widest text-xs uppercase hover:opacity-95 transition-all mt-8 text-sm" type="submit">
-              ENVIAR APLICAÇÃO
-            </button>
-
-          </form>
-
         </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- Scroll to Top Button -->
-  <button id="scroll-to-top" aria-label="Voltar ao topo" class="scroll-to-top fixed bottom-4 md:bottom-8 left-4 md:left-8 z-40 w-12 h-12 md:w-14 md:h-14 bg-primary text-on-primary rounded-full flex items-center justify-center hover:opacity-90 transition-all shadow-lg">
-    <span class="material-symbols-outlined text-2xl" aria-hidden="true">arrow_upward</span>
+  <!-- Scroll to Top -->
+  <button id="scroll-to-top" aria-label="Voltar ao topo" class="scroll-to-top">
+    <span class="material-symbols-outlined">arrow_upward</span>
   </button>
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/67992013472" target="_blank" aria-label="Abrir conversa WhatsApp" class="fixed bottom-4 md:bottom-8 right-4 md:right-8 z-40 w-12 h-12 md:w-14 md:h-14 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all shadow-lg">
-    <svg class="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/67992013472" target="_blank" rel="noopener noreferrer" aria-label="Abrir conversa WhatsApp" class="whatsapp-btn">
+    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
     </svg>
   </a>
 
   <!-- Footer -->
-  <footer class="bg-[#f6f4ed] dark:bg-[#121210] w-full py-12 md:py-16 pb-16 md:pb-20 px-8 md:px-20 lg:px-28">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-screen-2xl mx-auto">
-
-      <div class="flex flex-col items-center md:items-start gap-4">
-        <span class="font-['Playfair Display'] font-semibold text-[#1b1c18] dark:text-[#fbf9f2] text-lg">
-          Tatiani Mattos
-        </span>
-        <p class="font-['Playfair Display'] font-light tracking-widest text-[10px] uppercase text-[#685d45] text-center md:text-left">
-          © 2026 TATIANI MATTOS. TODOS OS DIREITOS RESERVADOS.
-        </p>
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__name">Tatiani Mattos</span>
+        <p class="footer__copy">© 2026 TATIANI MATTOS. TODOS OS DIREITOS RESERVADOS.</p>
       </div>
-
-      <div class="flex gap-8 md:gap-12">
-        <a class="font-['Playfair Display'] font-light tracking-widest text-[10px] uppercase text-[#4a453a] dark:text-[#e9e7dd] hover:underline underline-offset-8 transition-all" href="https://www.instagram.com/tatiani.mattos" target="_blank">
-          Instagram
-        </a>
+      <div class="footer__links">
+        <a class="footer__link" href="https://www.instagram.com/tatiani.mattos" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
-
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script>
-    // Mobile Menu Toggle
+    // Mobile Menu
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
+    function closeMobileMenu() { mobileMenu.classList.remove('active'); }
 
-    // Close mobile menu when clicking outside
+    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
     document.addEventListener('click', (e) => {
-      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.remove('active');
-      }
+      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) closeMobileMenu();
     });
 
-    // Scroll to Top Button
-    const scrollToTopButton = document.getElementById('scroll-to-top');
-
+    // Scroll to Top
+    const scrollBtn = document.getElementById('scroll-to-top');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollToTopButton.classList.add('show');
-      } else {
-        scrollToTopButton.classList.remove('show');
-      }
-    });
+      scrollBtn.classList.toggle('show', window.scrollY > 300);
+    }, { passive: true });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    scrollToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // Register Service Worker for PWA
+    // Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('SW registered: ', registration);
-          })
-          .catch(registrationError => {
-            console.log('SW registration failed: ', registrationError);
-          });
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
   </script>
 
 </body>
-
 </html>
