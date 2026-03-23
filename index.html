@@ -33,8 +33,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png"/>
   <link rel="manifest" href="/manifest.json"/>
   <meta name="theme-color" content="#685d45"/>
+  <meta http-equiv="x-dns-prefetch-control" content="on"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="script" href="https://cdn.tailwindcss.com?plugins=forms,container-queries"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"/>
   <link rel="preload" as="image" href="/img/foto-1.webp"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -247,7 +251,7 @@
         </div>
 
         <div class="relative h-[500px] sm:h-[716px] lg:h-[870px] w-full bg-surface-container-low overflow-hidden rounded-sm group">
-          <img alt="Tatiani Mattos portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" data-alt="Elegant professional woman in minimalist studio setting" src="/img/foto-1.webp" loading="eager" decoding="async"/>
+          <img alt="Tatiani Mattos portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" data-alt="Elegant professional woman in minimalist studio setting" src="/img/foto-1.webp" loading="eager" decoding="async" fetchpriority="high" width="1200" height="800"/>
         </div>
 
       </div>
@@ -509,7 +513,7 @@
           <!-- Image -->
           <div class="lg:col-span-5 relative">
             <div class="relative z-10 aspect-[3/4] overflow-hidden">
-              <img alt="Tatiani Mattos portrait" class="w-full h-full object-cover" data-alt="Close up portrait of a sophisticated woman with thoughtful expression" src="/img/foto-2.webp" loading="lazy" decoding="async"/>
+              <img alt="Tatiani Mattos portrait" class="w-full h-full object-cover" data-alt="Close up portrait of a sophisticated woman with thoughtful expression" src="/img/foto-2.webp" loading="lazy" decoding="async" width="1200" height="800"/>
             </div>
             <div class="absolute -bottom-10 -right-10 w-2/3 aspect-square bg-surface-container-highest -z-0"></div>
           </div>
