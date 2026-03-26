@@ -195,13 +195,14 @@
       align-items: center;
     }
     .nav__logo-img {
-      height: 32px; /* Altura ideal para mobile */
+      max-width: 70%; /* Altura ideal para mobile */
       width: auto;
       display: block;
     }
     @media (min-width: 768px) {
       .nav__logo-img {
-        height: 42px; /* Altura levemente maior para desktop */
+        max-width: 50%; /* Altura levemente maior para desktop */
+        width: 49rem;
       }
     }
 
@@ -494,10 +495,11 @@
     .services__grid {
       display: grid;
       gap: 0.25rem;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
     }
     @media (min-width: 768px)  { .services__grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px) { .services__grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .services__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
     .service-card {
       padding: 1.5rem;
@@ -507,6 +509,9 @@
       justify-content: center;
       gap: 1rem;
       cursor: pointer;
+      width: 100%;
+      min-width: 0;
+      overflow: hidden;
       transition: background-color 0.5s;
     }
     @media (min-width: 640px) {
@@ -545,12 +550,14 @@
       font-size: clamp(1rem, 2vw, 1.5rem);
       font-weight: 500;
       margin-bottom: 1rem;
+      word-break: break-word;
       transition: color 0.5s;
     }
     .service-card:hover .service-card__title { color: var(--color-on-primary); }
 
     .service-card__desc {
       font-size: clamp(0.6875rem, 1.2vw, 0.875rem);
+      word-break: break-word;
       color: var(--color-on-surface-variant);
       line-height: 1.65;
       transition: color 0.5s;
@@ -968,7 +975,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="section section--bg px-page" id="servicos" style="overflow: hidden;">
+    <section class="section section--bg px-page" id="servicos">
       <div class="container">
 
         <div class="services__header">
