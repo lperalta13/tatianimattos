@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
   <title>Tatiani Mattos | Consultoria de Imagem</title>
   <meta name="description" content="Consultoria de Imagem Estratégica com Tatiani Mattos. Transforme sua presença através de um método autoral que une técnica acadêmica, sensibilidade estética e 10 anos de experiência no mercado de alto luxo."/>
   <meta name="keywords" content="consultoria de imagem, imagem pessoal, estilo profissional, coloração pessoal, visagismo, Tatiani Mattos"/>
@@ -56,7 +56,7 @@
   <style>
     /* ─── CSS Custom Properties (design tokens) ─── */
     :root {
-      --color-primary:                #685d45;
+      --color-primary:                #B49A64;
       --color-on-primary:             #ffffff;
       --color-primary-fixed:          #f1e1c2;
       --color-primary-fixed-dim:      #d4c5a8;
@@ -97,9 +97,9 @@
       --color-surface-container-low:     #f6f4ed;
       --color-surface-container:         #f0eee7;
       --color-surface-container-high:    #eae8e1;
-      --color-surface-container-highest: #e4e2dc;
+      --color-surface-container-highest: #292C32;
 
-      --color-outline:                #7d766c;
+      --color-outline:                #B49A64;
       --color-outline-variant:        #cec5b9;
       --color-inverse-surface:        #30312c;
       --color-inverse-on-surface:     #f3f1ea;
@@ -119,14 +119,13 @@
 
     /* ─── Reset & Base ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; max-width: 100vw; }
+    html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
     body {
       background-color: var(--color-background);
       color: var(--color-on-surface);
       font-family: var(--font-display);
       overflow-x: hidden;
       width: 100%;
-      max-width: 100vw;
     }
     ::selection { background-color: var(--color-primary-container); color: var(--color-on-primary-container); }
     img { max-width: 100%; height: auto; display: block; }
@@ -152,7 +151,7 @@
 
     /* ─── Layout Utilities ─── */
     .container { width: 100%; max-width: 1536px; margin-inline: auto; }
-    .px-page { padding-inline: 1rem; }
+    .px-page { padding-inline: 1.5rem; }
     @media (min-width: 768px) { .px-page { padding-inline: 3rem; } }
     @media (min-width: 1024px) { .px-page { padding-inline: 6rem; } }
 
@@ -173,9 +172,10 @@
     .nav {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      z-index: 50;
-      background-color: rgba(251, 249, 242, 0.8);
+      z-index: 100;
+      background-color: rgba(251, 249, 242, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 8px 32px rgba(27, 28, 24, 0.04);
@@ -184,20 +184,26 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 1rem;
+      padding: 1.25rem 1.5rem;
       max-width: 1536px;
       margin-inline: auto;
     }
     @media (min-width: 768px) { .nav__inner { padding-inline: 3rem; } }
 
     .nav__logo {
-      font-family: var(--font-display);
-      font-weight: 400;
-      letter-spacing: -0.04em;
-      color: var(--color-on-background);
-      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
     }
-    @media (min-width: 768px) { .nav__logo { font-size: 1.5rem; } }
+    .nav__logo-img {
+      height: 32px; /* Altura ideal para mobile */
+      width: auto;
+      display: block;
+    }
+    @media (min-width: 768px) {
+      .nav__logo-img {
+        height: 42px; /* Altura levemente maior para desktop */
+      }
+    }
 
     .nav__links {
       display: none;
@@ -259,7 +265,7 @@
       color: var(--color-primary);
       transition: opacity 0.3s;
     }
-    .nav__mobile-btn:hover { opacity: 0.7; }
+    .nav__mobile-btn:active { opacity: 0.7; }
     @media (min-width: 768px) { .nav__mobile-btn { display: none; } }
 
     .mobile-menu {
@@ -309,7 +315,7 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      padding-inline: 1rem;
+      padding-inline: 1.5rem;
     }
     @media (min-width: 768px) { .hero { padding-inline: 3rem; } }
     @media (min-width: 1024px) { .hero { padding-inline: 6rem; } }
@@ -330,7 +336,7 @@
 
     .hero__title {
       font-family: var(--font-display);
-      font-weight: 700;
+      font-weight: 500;
       font-size: clamp(3rem, 8vw, 6rem);
       line-height: 1.1;
       color: var(--color-on-surface);
@@ -346,9 +352,10 @@
       color: var(--color-on-surface-variant);
       font-size: clamp(1rem, 2vw, 1.125rem);
       line-height: 1.7;
-      max-width: 36rem;
       margin-bottom: 3rem;
       font-weight: 300;
+      max-width: 50rem;
+      margin-inline: auto; /* Garante centralização se necessário */
     }
 
     .hero__cta {
@@ -401,27 +408,47 @@
 
     /* ─── Method Section ─── */
     .method__header { margin-bottom: 5rem; text-align: center; }
-    @media (min-width: 1024px) { .method__header { text-align: left; } }
+    @media (min-width: 1024px) { .method__header { text-align: center; } }
 
     .method__title {
       font-family: var(--font-display);
-      font-weight: 700;
+      font-weight: 500;
       font-size: clamp(1.875rem, 5vw, 3.75rem);
       color: var(--color-on-surface);
       letter-spacing: -0.04em;
+      padding-bottom: 1.5rem;
     }
     .method__title em { font-style: italic; }
+
+    .method__text {
+      color: var(--color-on-surface-variant);
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      line-height: 1.7;
+      margin-bottom: 0;
+      font-weight: 300;
+      max-width: 52rem;
+      margin-inline: auto;
+    }
 
     .method__grid {
       display: grid;
       gap: 3rem 4rem;
     }
-    @media (min-width: 768px) { .method__grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 768px) { 
+      .method__grid { 
+        grid-template-columns: repeat(3, 1fr);
+      } 
+    }
+
+    @media (max-width: 767px) {
+      .method__number {text-align: center;}
+      .method__card-title {text-align: center;}
+    }
 
     .method__card { display: flex; flex-direction: column; gap: 1.5rem; }
     .method__number {
       font-family: var(--font-display);
-      font-weight: 800;
+      font-weight: 700;
       font-size: clamp(4rem, 8vw, 6rem);
       color: var(--color-primary-container);
       opacity: 0.4;
@@ -432,7 +459,7 @@
 
     .method__card-title {
       font-size: clamp(1.125rem, 2vw, 1.5rem);
-      font-weight: 700;
+      font-weight: 500;
       letter-spacing: -0.02em;
       text-transform: uppercase;
     }
@@ -445,36 +472,24 @@
 
     /* ─── Services Section ─── */
     .services__header {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
       margin-bottom: 5rem;
+      text-align: center;
     }
     @media (min-width: 1024px) {
       .services__header {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
+        text-align: center;
       }
     }
 
     .services__title {
       font-family: var(--font-display);
-      font-weight: 700;
+      font-weight: 500;
       font-size: clamp(1.875rem, 5vw, 3.75rem);
       color: var(--color-on-surface);
       letter-spacing: -0.04em;
       line-height: 1.15;
-      max-width: 40rem;
     }
     .services__title em { font-style: italic; }
-    .services__subtitle {
-      color: var(--color-on-surface-variant);
-      max-width: 24rem;
-      font-weight: 300;
-      font-size: clamp(0.875rem, 1.5vw, 1rem);
-      margin-bottom: 0.5rem;
-    }
 
     .services__grid {
       display: grid;
@@ -485,19 +500,27 @@
     @media (min-width: 1024px) { .services__grid { grid-template-columns: repeat(3, 1fr); } }
 
     .service-card {
-      padding: 2rem;
-      aspect-ratio: 1;
+      padding: 1.5rem;
+      aspect-ratio: 2 / 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 1rem;
       cursor: pointer;
       transition: background-color 0.5s;
     }
-    @media (min-width: 640px) { .service-card { padding: 3rem; } }
+    @media (min-width: 640px) {
+      .service-card {
+        padding: 3rem;
+        aspect-ratio: 1;
+        justify-content: space-between;
+        gap: 0;
+      }
+    }
 
     .service-card--a { background-color: var(--color-surface-container); }
     .service-card--b { background-color: var(--color-surface-container-high); }
-    .service-card--c { background-color: var(--color-surface-container-highest); }
+    .service-card--c { background-color: var(--color-surface-container-high); }
     .service-card:hover { background-color: var(--color-primary); }
 
     .service-card__top { display: flex; justify-content: space-between; align-items: flex-start; }
@@ -510,7 +533,7 @@
 
     .service-card__badge {
       font-size: 0.5625rem;
-      font-weight: 700;
+      font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--color-outline);
@@ -520,7 +543,7 @@
 
     .service-card__title {
       font-size: clamp(1rem, 2vw, 1.5rem);
-      font-weight: 700;
+      font-weight: 500;
       margin-bottom: 1rem;
       transition: color 0.5s;
     }
@@ -538,11 +561,13 @@
     .testimonials__header { text-align: center; margin-bottom: 5rem; }
     .testimonials__title {
       font-family: var(--font-display);
-      font-weight: 700;
+      font-weight: 500;
       font-size: clamp(1.875rem, 4vw, 3rem);
       color: var(--color-on-surface);
       letter-spacing: -0.04em;
     }
+
+    .testimonials__title em { font-style: italic; }
 
     .testimonials__grid {
       display: grid;
@@ -604,13 +629,13 @@
       right: -2.5rem;
       width: 66%;
       aspect-ratio: 1;
-      background-color: var(--color-surface-container-highest);
+      background-color: var(--color-surface-container-high);
       z-index: 0;
     }
 
     .about__title {
       font-family: var(--font-display);
-      font-weight: 700;
+      font-weight: 500;
       font-size: clamp(1.875rem, 5vw, 3.75rem);
       color: var(--color-on-surface);
       letter-spacing: -0.04em;
@@ -636,6 +661,10 @@
       gap: 1.5rem 2rem;
     }
     @media (min-width: 640px) { .about__stats { grid-template-columns: repeat(4, 1fr); } }
+
+    .about__stat-al {
+      text-align: center;
+    }
 
     .about__stat-value {
       font-size: clamp(1.5rem, 3vw, 1.875rem);
@@ -667,7 +696,7 @@
 
     .contact__title {
       font-family: var(--font-display);
-      font-weight: 700;
+      font-weight: 500;
       font-size: clamp(1.875rem, 5vw, 3.75rem);
       color: var(--color-on-surface);
       letter-spacing: -0.04em;
@@ -733,8 +762,8 @@
     /* ─── Floating Buttons ─── */
     .scroll-to-top {
       position: fixed;
-      bottom: 1rem;
-      left: 1rem;
+      bottom: 1.5rem;
+      left: 1.5rem;
       z-index: 40;
       width: 3rem;
       height: 3rem;
@@ -757,8 +786,8 @@
 
     .whatsapp-btn {
       position: fixed;
-      bottom: 1rem;
-      right: 1rem;
+      bottom: 1.5rem;
+      right: 1.5rem;
       z-index: 40;
       width: 3rem;
       height: 3rem;
@@ -835,7 +864,9 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav__inner">
-      <a class="nav__logo" href="#">Tatiani Mattos</a>
+      <a class="nav__logo" href="#" aria-label="Tatiani Mattos - Início">
+        <img src="img/logo-tatiani.png" alt="Tatiani Mattos" class="nav__logo-img">
+      </a>
 
       <div class="nav__links">
         <a class="nav__link" href="#servicos">Serviços</a>
@@ -845,7 +876,7 @@
         <a class="btn-primary" href="#contato">AGENDAR CONSULTORIA</a>
       </div>
 
-      <button id="menu-toggle" class="nav__mobile-btn" aria-label="Abrir menu">
+      <button id="menu-toggle" class="nav__mobile-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
         <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
@@ -853,12 +884,12 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu">
       <div class="mobile-menu__inner">
-        <a class="mobile-menu__link" href="#servicos" onclick="closeMobileMenu()">Serviços</a>
-        <a class="mobile-menu__link" href="#metodologia" onclick="closeMobileMenu()">Metodologia</a>
-        <a class="mobile-menu__link" href="#sobre" onclick="closeMobileMenu()">Sobre</a>
-        <a class="mobile-menu__link" href="#contato" onclick="closeMobileMenu()">Contato</a>
+        <a class="mobile-menu__link" href="#servicos">Serviços</a>
+        <a class="mobile-menu__link" href="#metodologia">Metodologia</a>
+        <a class="mobile-menu__link" href="#sobre">Sobre</a>
+        <a class="mobile-menu__link" href="#contato">Contato</a>
         <hr class="mobile-menu__divider"/>
-        <a class="btn-primary" href="#contato" onclick="closeMobileMenu()">AGENDAR CONSULTORIA</a>
+        <a class="btn-primary" href="#contato">AGENDAR CONSULTORIA</a>
       </div>
     </div>
   </nav>
@@ -871,12 +902,12 @@
       <div class="hero__grid">
 
         <div class="hero__content">
-          <span class="label-overline">CONSULTORIA DE IMAGEM ESTRATÉGICA</span>
+          <span class="label-overline">TATIANI MATTOS · CONSULTORIA DE IMAGEM</span>
           <h1 class="hero__title">
             Sua imagem é sua <em>primeira voz.</em>
           </h1>
           <p class="hero__text">
-            Transforme sua presença através de um método autoral que une técnica acadêmica, sensibilidade estética e 10 anos de experiência no mercado de alto luxo.
+            Consultoria de imagem estratégica para mulheres que buscam clareza, confiança e um guarda-roupa que acompanhe seu sucesso.
           </p>
           <div class="hero__cta">
             <a class="btn-hero-primary" href="#servicos">CONHEÇA OS SERVIÇOS</a>
@@ -908,8 +939,11 @@
       <div class="container">
 
         <div class="method__header">
-          <span class="label-overline">A ESTRUTURA</span>
+          <span class="label-overline">O MÉTODO</span>
           <h2 class="method__title">Onde a técnica encontra a <em>sensibilidade.</em></h2>
+          <p class="method__text">
+            Com formação em Belas Artes e mais de 10 anos imersa no universo do luxo, desenvolvi um olhar que une composição estética, análise de cores e inteligência emocional. Cada cliente recebe uma estratégia de imagem que reflete quem ela realmente é — e onde ela deseja chegar.
+          </p>
         </div>
 
         <div class="method__grid">
@@ -938,11 +972,8 @@
       <div class="container">
 
         <div class="services__header">
-          <div style="max-width: 40rem;">
-            <span class="label-overline">SOLUÇÕES PERSONALIZADAS</span>
-            <h2 class="services__title">O Ecossistema de <em>Transformação</em></h2>
-          </div>
-          <p class="services__subtitle">Consultorias modulares ou completas, desenhadas para a mulher contemporânea que não abre mão da excelência.</p>
+          <span class="label-overline">SERVIÇOS</span>
+          <h2 class="services__title">O Ecossistema de <em>Transformação</em></h2>
         </div>
 
         <div class="services__grid">
@@ -1012,8 +1043,8 @@
       <div class="container">
 
         <div class="testimonials__header">
-          <span class="label-overline">FEEDBACK</span>
-          <h2 class="testimonials__title">O que elas dizem</h2>
+          <span class="label-overline">RESULTADOS</span>
+          <h2 class="testimonials__title">O que elas <em>dizem</em></h2>
         </div>
 
         <div class="testimonials__grid">
@@ -1031,6 +1062,21 @@
             <p class="testimonial-card__quote">"Trabalhar minha imagem com a Tatiani foi o melhor investimento que fiz em mim mesma. Aprendi que estilo não é sobre tendências, mas sobre autoconhecimento."</p>
             <p class="testimonial-card__name">Mariana S.</p>
             <p class="testimonial-card__role">Executiva de TI</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"Como arquiteta, prezo por harmonia e proporção. A Tati traduziu esses conceitos para a minha imagem de forma brilhante. Hoje minha presença é tão autoral quanto meus projetos."</p>
+            <p class="testimonial-card__name">Beatriz R.</p>
+            <p class="testimonial-card__role">Arquiteta</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"Sempre tive dificuldade em equilibrar feminilidade e autoridade no ambiente hospitalar. A estratégia de imagem trouxe esse equilíbrio com muita sofisticação e conforto."</p>
+            <p class="testimonial-card__name">Dra. Luciana V.</p>
+            <p class="testimonial-card__role">Médica</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">"O treinamento de Dress Code para minha equipe de vendas foi transformador. Elevamos o padrão de atendimento e a confiança do time através da imagem estratégica."</p>
+            <p class="testimonial-card__name">Renata A.</p>
+            <p class="testimonial-card__role">Gestora de Varejo de Luxo</p>
           </div>
         </div>
 
@@ -1069,10 +1115,10 @@
               <p>Especialista em coloração pessoal, visagismo e estratégia de estilo, Tati acredita que a elegância é a harmonia entre o conteúdo e a forma.</p>
             </div>
             <div class="about__stats">
-              <div><p class="about__stat-value">500+</p><p class="about__stat-label">Clientes</p></div>
-              <div><p class="about__stat-value">10A</p><p class="about__stat-label">Experiência</p></div>
-              <div><p class="about__stat-value">15k+</p><p class="about__stat-label">Looks</p></div>
-              <div><p class="about__stat-value">100%</p><p class="about__stat-label">Personalizado</p></div>
+              <div class="about__stat-al"><p class="about__stat-value">500+</p><p class="about__stat-label">Clientes</p></div>
+              <div class="about__stat-al"><p class="about__stat-value">10A</p><p class="about__stat-label">Experiência</p></div>
+              <div class="about__stat-al"><p class="about__stat-value">15k+</p><p class="about__stat-label">Looks</p></div>
+              <div class="about__stat-al"><p class="about__stat-value">100%</p><p class="about__stat-label">Personalizado</p></div>
             </div>
           </div>
         </div>
@@ -1166,12 +1212,24 @@
     // Mobile Menu
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-menu__link, .mobile-menu .btn-primary');
 
-    function closeMobileMenu() { mobileMenu.classList.remove('active'); }
+    const toggleMenu = () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('active');
+    };
 
-    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+    const closeMenu = () => {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('active');
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
     document.addEventListener('click', (e) => {
-      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) closeMobileMenu();
+      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
     });
 
     // Scroll to Top
