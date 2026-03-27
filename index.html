@@ -592,6 +592,7 @@
       background-color: var(--color-background);
       padding: 2rem;
       box-shadow: 0 8px 32px rgba(27, 28, 24, 0.02);
+      position: relative;
     }
     @media (min-width: 640px) { .testimonial-card { padding: 3rem; } }
 
@@ -841,11 +842,17 @@
     .footer__brand { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
     @media (min-width: 768px) { .footer__brand { align-items: flex-start; } }
 
-    .footer__name {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1.125rem;
-      color: var(--color-on-background);
+    .footer__logo {
+      width: 4rem;
+      height: 4rem;
+      object-fit: contain;
+      display: block;
+    }
+    @media (min-width: 768px) {
+      .footer__logo {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
     }
     .footer__copy {
       font-family: var(--font-display);
@@ -869,6 +876,64 @@
       transition: text-decoration 0.2s;
     }
     .footer__link:hover { text-decoration: underline; text-underline-offset: 0.5rem; }
+
+    /* ─── Video Testimonials Modal ─── */
+    .video-trigger {
+      position: absolute;
+      top: -1.25rem;
+      right: 1.5rem;
+      width: 2.75rem;
+      height: 2.75rem;
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 16px rgba(180, 154, 100, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 10;
+      border: 2px solid var(--color-background);
+    }
+    .video-trigger:hover {
+      transform: translateY(-4px) scale(1.05);
+      background-color: var(--color-on-primary-container);
+      box-shadow: 0 12px 24px rgba(180, 154, 100, 0.4);
+    }
+    .video-trigger span { font-variation-settings: 'FILL' 1, 'wght' 300; font-size: 1.25rem; }
+
+    .video-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(27, 28, 24, 0.9);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .video-modal.active { display: flex; }
+    .video-modal__content { width: 100%; max-width: 900px; position: relative; }
+    .video-modal__container { position: relative; padding-bottom: 56.25%; height: 0; box-shadow: 0 32px 80px rgba(0,0,0,0.6); background: #000; }
+    .video-modal__container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .video-modal__close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      color: white;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -1062,31 +1127,49 @@
 
         <div class="testimonials__grid">
           <div class="testimonial-card">
+            <button class="video-trigger" data-video-id="ID_DO_VIDEO_1" aria-label="Ver depoimento em vídeo">
+              <span class="material-symbols-outlined">play_arrow</span>
+            </button>
             <p class="testimonial-card__quote">"A consultoria com a Tati foi um divisor de águas na minha carreira. Hoje me sinto segura em qualquer ambiente e minha imagem finalmente reflete minha senioridade."</p>
             <p class="testimonial-card__name">Dra. Carolina M.</p>
             <p class="testimonial-card__role">Advogada</p>
           </div>
           <div class="testimonial-card">
+            <button class="video-trigger" data-video-id="ID_DO_VIDEO_2" aria-label="Ver depoimento em vídeo">
+              <span class="material-symbols-outlined">play_arrow</span>
+            </button>
             <p class="testimonial-card__quote">"O método dela é impecável. Ela entendeu meu estilo de vida corrido e criou uma mala inteligente que salvou minha viagem para Paris. Praticidade com elegância."</p>
             <p class="testimonial-card__name">Fernanda L.</p>
             <p class="testimonial-card__role">Empresária</p>
           </div>
           <div class="testimonial-card">
+            <button class="video-trigger" data-video-id="ID_DO_VIDEO_3" aria-label="Ver depoimento em vídeo">
+              <span class="material-symbols-outlined">play_arrow</span>
+            </button>
             <p class="testimonial-card__quote">"Trabalhar minha imagem com a Tatiani foi o melhor investimento que fiz em mim mesma. Aprendi que estilo não é sobre tendências, mas sobre autoconhecimento."</p>
             <p class="testimonial-card__name">Mariana S.</p>
             <p class="testimonial-card__role">Executiva de TI</p>
           </div>
           <div class="testimonial-card">
+            <button class="video-trigger" data-video-id="ID_DO_VIDEO_4" aria-label="Ver depoimento em vídeo">
+              <span class="material-symbols-outlined">play_arrow</span>
+            </button>
             <p class="testimonial-card__quote">"Como arquiteta, prezo por harmonia e proporção. A Tati traduziu esses conceitos para a minha imagem de forma brilhante. Hoje minha presença é tão autoral quanto meus projetos."</p>
             <p class="testimonial-card__name">Beatriz R.</p>
             <p class="testimonial-card__role">Arquiteta</p>
           </div>
           <div class="testimonial-card">
+            <button class="video-trigger" data-video-id="ID_DO_VIDEO_5" aria-label="Ver depoimento em vídeo">
+              <span class="material-symbols-outlined">play_arrow</span>
+            </button>
             <p class="testimonial-card__quote">"Sempre tive dificuldade em equilibrar feminilidade e autoridade no ambiente hospitalar. A estratégia de imagem trouxe esse equilíbrio com muita sofisticação e conforto."</p>
             <p class="testimonial-card__name">Dra. Luciana V.</p>
             <p class="testimonial-card__role">Médica</p>
           </div>
           <div class="testimonial-card">
+            <button class="video-trigger" data-video-id="ID_DO_VIDEO_6" aria-label="Ver depoimento em vídeo">
+              <span class="material-symbols-outlined">play_arrow</span>
+            </button>
             <p class="testimonial-card__quote">"O treinamento de Dress Code para minha equipe de vendas foi transformador. Elevamos o padrão de atendimento e a confiança do time através da imagem estratégica."</p>
             <p class="testimonial-card__name">Renata A.</p>
             <p class="testimonial-card__role">Gestora de Varejo de Luxo</p>
@@ -1212,7 +1295,7 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__brand">
-        <span class="footer__name">Tatiani Mattos</span>
+        <img src="img/monograma.png" alt="Tatiani Mattos" class="footer__logo">
         <p class="footer__copy">© 2026 TATIANI MATTOS. TODOS OS DIREITOS RESERVADOS.</p>
       </div>
       <div class="footer__links">
@@ -1220,6 +1303,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- Video Modal -->
+  <div id="video-modal" class="video-modal">
+    <div class="video-modal__content">
+      <button id="video-close" class="video-modal__close">
+        FECHAR <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="video-modal__container">
+        <iframe id="video-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <script>
     // Mobile Menu
@@ -1258,6 +1353,34 @@
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
+
+    // Video Testimonials Logic
+    const videoModal = document.getElementById('video-modal');
+    const videoIframe = document.getElementById('video-iframe');
+    const videoClose = document.getElementById('video-close');
+    const testimonialsGrid = document.querySelector('.testimonials__grid');
+
+    const closeVideo = () => {
+      videoModal.classList.remove('active');
+      videoIframe.src = '';
+      document.body.style.overflow = '';
+    };
+
+    if (testimonialsGrid) {
+      testimonialsGrid.addEventListener('click', (e) => {
+        const trigger = e.target.closest('.video-trigger');
+        if (trigger) {
+          const videoId = trigger.getAttribute('data-video-id');
+          videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          videoModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    }
+
+    videoClose.addEventListener('click', closeVideo);
+    videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideo(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideo(); });
   </script>
 
 </body>
